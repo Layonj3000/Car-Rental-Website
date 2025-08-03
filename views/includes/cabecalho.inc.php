@@ -9,8 +9,11 @@
 
     <?php if ($estilo === "estiloLogin"): ?>
         <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-form-login.css">
-    <?php elseif ($estilo === "estiloFormInclusao"): ?>
-        <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-form-inclusao.css">
+    <?php elseif ($estilo === "estiloFormGeral"): ?>
+        <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-form-geral.css">
+    <?php elseif ($estilo === "visualizacaoVeiculos"): ?>
+        <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-form-geral.css">
+        <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-visualizacao-veiculos.css">    
     <?php endif; ?>
     
 </head>

@@ -1,5 +1,5 @@
 <?php 
-    $estilo = "estiloFormInclusao";
+    $estilo = "estiloFormGeral";
     include_once "includes/cabecalho.inc.php";
 ?>
 
