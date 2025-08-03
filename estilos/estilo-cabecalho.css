@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    color: black;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 14rem;
+    border-bottom: 1px solid rgb(187, 184, 184);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+nav ul li{
+    position: relative; 
+}
+
+nav > ul > li{
+    display: block;
+    padding: 1em;
+} 
+
+nav ul ul{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none; 
+    border: 1px solid rgb(187, 184, 184);
+    border-radius: 0.2em;
+    background-color: white;
+    min-width: 150px;
+    min-height: 75px;
+}
+
+nav ul li:hover>ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a button{
+    padding: 0.3em 0.5em;
+    background-color: white;
+    border-radius: 0.3rem;
+    border: 1px solid #0D6EFD;
+    color: #0D6EFD;
+}
+
+.logo img{
+    position: absolute; 
+    top: 0;
+    height: 4.2rem;
+}
+
+.carrinho-de-compras img{
+    height: 1.7rem;
+    width: 2.3rem;
+}
+
+.clientes{
+    align-items: center;
+}
+
+.clientes img{
+    height: 0.5rem;
+}
+
+

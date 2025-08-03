@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora de veículos</title>
+
+    <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-cabecalho.css">
+
+    <?php if ($estilo === "estiloLogin"): ?>
+        <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-form-login.css">
+    <?php elseif ($estilo === "estiloFormInclusao"): ?>
+        <link rel="stylesheet" href="/trabalho-locadora-de-veiculos/estilos/estilo-form-inclusao.css">
+    <?php endif; ?>
+    
+</head>
+<body>    
+    <nav>
+        <a href="#" class="logo"><img src="/trabalho-locadora-de-veiculos/imagens/car.png" alt="logo-carro"></a>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produtos da Loja</a></li>
+            <li class="clientes">
+                <a href="#">Clientes</a>
+                <ul>
+                    <li><a href="#">Cadastrar</a></li>
+                    <li><a href="#">Seus Dados</a></li>
+                </ul>
+                <img src="/trabalho-locadora-de-veiculos/imagens/seta-para-baixo.png" alt="seta-para-baixo">
+            </li>
+            <li><a href="#">Contato</a></li>
+            <li class="carrinho-de-compras"><img src="/trabalho-locadora-de-veiculos/imagens/carrinho-de-compras.png" alt="carrinho-de-compras"></li>
+        </ul>
+
+        <a href="#"><button>Login</button></a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: rgb(44, 43, 43);
+    font-weight: 500;
+}
+
+div{
+    margin: 1rem auto;
+    max-width: 80%;
+}
+
+div input{
+    width: 15rem;
+    height: 3rem;
+    border: 1px solid rgb(187, 184, 184);
+    border-radius: 0.2rem;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form > .padrao,
+form > .botoes{
+    flex: 0 1 48%;
+} 
+
+.opcionais,
+.locado{
+    flex: 0 1 96%;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"]{ 
+    width: 100%;
+}
+
+input[type="submit"],
+input[type="button"]{
+    border-radius: 0.3rem;
+    font-weight: 500;
+}
+
+input[type="submit"]{
+    background-color: #0D6EFD;
+    color: white;
+}
+
+input[type="button"]{
+    background-color: red;
+    color: white;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+
