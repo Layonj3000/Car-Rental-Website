@@ -36,7 +36,21 @@
             <li class="carrinho-de-compras"><img src="../imagens/carrinho-de-compras.png" alt="carrinho-de-compras"></li>
         </ul>
 
-        <a href="#"><button>Login</button></a>
+        <?php
+            session_start();
+            if(!isset($_SESSION['usuario'])){
+        ?>
+                <a href="formLogin.php" class="btn-login"><button>Login</button></a> 
+
+        <?php
+            }
+            else{
+        ?>
+                <a href="../controlers/controlerUsuario.php?pOpcao=2" class="btn-sair"><button>Sair</button></a> 
+        <?php
+            }
+
+        ?>
     </nav>
 </body>
 </html>
