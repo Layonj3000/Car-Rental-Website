@@ -6,15 +6,9 @@
     <title>Locadora de veículos</title>
 
     <link rel="stylesheet" href="../estilos/estilo-cabecalho.css">
-
-    <?php if ($estilo === "estiloLogin"): ?>
-        <link rel="stylesheet" href="../estilos/estilo-form-login.css">
-    <?php elseif ($estilo === "estiloFormGeral"): ?>
-        <link rel="stylesheet" href="../estilos/estilo-form-geral.css">
-    <?php elseif ($estilo === "visualizacaoVeiculos"): ?>
-        <link rel="stylesheet" href="../estilos/estilo-form-geral.css">
-        <link rel="stylesheet" href="../estilos/estilo-visualizacao-veiculos.css">    
-    <?php endif; ?>
+    <link rel="stylesheet" href="../estilos/estilo-form-login.css">
+    <link rel="stylesheet" href="../estilos/estilo-form-geral.css">
+    <link rel="stylesheet" href="../estilos/estilo-visualizacao-veiculos.css">   
     
 </head>
 <body>    

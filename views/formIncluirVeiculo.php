@@ -1,9 +1,8 @@
 <?php 
-    $estilo = "estiloFormGeral";
     include_once "includes/cabecalho.inc.php";
 ?>
 
-<div>
+<div class="form-padrao">
 <h1>Inclusão de Veículo</h1>
 
 <form action="">

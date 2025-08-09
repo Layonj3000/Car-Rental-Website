@@ -5,7 +5,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1{
+.form-padrao h1{
     text-align: center;
     padding-top: 2rem;
     font-size: 2rem;
@@ -13,63 +13,69 @@ h1{
     font-weight: 500;
 }
 
-div{
+.form-padrao{
     margin: 1rem auto;
     max-width: 80%;
 }
 
-div input{
+.form-padrao div {
+    margin: .50rem auto;
+}
+
+.form-padrao input{
     width: 15rem;
     height: 3rem;
     border: 1px solid rgb(187, 184, 184);
     border-radius: 0.2rem;
 }
 
-form{
+.form-padrao form{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 1rem auto;
 }
 
-form > .padrao,
-form > .botoes{
+.form-padrao .padrao{
     flex: 0 1 48%;
 } 
 
-.opcionais,
-.locado{
-    flex: 0 1 96%;
+.form-padrao .botoes,
+.form-padrao .opcionais,
+.form-padrao .locado{
+    flex: 0 1 98%;
 }
 
-.botoes{
+.form-padrao .botoes{
     display: flex;
     justify-content: center;
     gap: 1rem;
+    /* margin: 2rem auto; */
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"]{ 
+.form-padrao input[type="text"],
+.form-padrao input[type="number"],
+.form-padrao input[type="email"]{ 
     width: 100%;
 }
 
-input[type="submit"],
-input[type="button"]{
+.form-padrao input[type="submit"],
+.form-padrao input[type="button"]{
     border-radius: 0.3rem;
     font-weight: 500;
 }
 
-input[type="submit"]{
+.form-padrao input[type="submit"]{
     background-color: #0D6EFD;
     color: white;
 }
 
-input[type="button"]{
+.form-padrao input[type="button"]{
     background-color: red;
     color: white;
 }
 
-form label {
+.form-padrao form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;

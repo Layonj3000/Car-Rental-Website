@@ -1,9 +1,8 @@
 <?php 
-    $estilo = "estiloFormGeral";
     include_once "includes/cabecalho.inc.php";
 ?>
 
-<div>
+<div class="form-padrao">
 <h1>Cadastro de Sócio</h1>
 
 <form action="">

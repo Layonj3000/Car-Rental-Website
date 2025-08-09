@@ -5,39 +5,41 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-table{
-    width: 100%;
+.tabela-visualizacao-veiculos table{
+    width: 80%;
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
-th, td{
+.tabela-visualizacao-veiculos th, 
+.tabela-visualizacao-veiculos td{
     border-bottom: 1px solid #ccc;
     padding: 0.75rem;
     text-align: left;
 }
 
-th{
+.tabela-visualizacao-veiculos th{
     background-color: #CFE2FF;
     font-weight: bold;
 }
 
-.operacoes{
+.tabela-visualizacao-veiculos .operacoes{
     display: flex;
     gap: 0.5rem;
 }
 
-.operacoes a{
+.tabela-visualizacao-veiculos .operacoes a{
     margin: 0;
     padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
     color: white;
 }
 
-.btn-alterar{
+.tabela-visualizacao-veiculos .btn-alterar{
     background-color: #157347;
     
 }
 
-.btn-excluir{
+.tabela-visualizacao-veiculos .btn-excluir{
     background-color: #DC3545;
 }

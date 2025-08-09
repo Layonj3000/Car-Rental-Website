@@ -1,12 +1,10 @@
 <?php 
-$estilo = "estiloLogin";
-
-include_once "includes/cabecalho.inc.php";
+    include_once "includes/cabecalho.inc.php";
 ?>
 
-<h1>Login de Usuário</h1>
+<h1 class="titulo-login">Login de Usuário</h1>
 
-<div>
+<div class="div-login">
     <h2>Entre com suas informações de Login</h2>
     <form action="../controlers/controlerUsuario.php" method="get">
         <input type="text" placeholder="Usuário" name="pUser"><br><br>
