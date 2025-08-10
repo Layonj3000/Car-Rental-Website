@@ -34,7 +34,7 @@
             $sql -> execute();
         }
 
-        public function alterarVeiculo(Veiculo $veiculo){
+        public function atualizarVeiculo(Veiculo $veiculo){
             $sql = $this -> con -> prepare("update veiculos set nome = :nome, 
                                                                 anoFabricacao = :anoFabricacao,
                                                                 fabricante = :fabricante,
