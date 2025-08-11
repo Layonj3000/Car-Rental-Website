@@ -70,6 +70,8 @@ class LocacaoDao{
         $sql -> bindValue(":data1", $data1);
         $sql -> bindValue(":data2", $data2);
 
+        $sql -> execute();
+
         $locacoes = array();
         
         while($rs = $sql -> fetch(PDO::FETCH_OBJ)){

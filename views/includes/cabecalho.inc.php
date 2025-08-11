@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="../estilos/estilo-cabecalho.css">
     <link rel="stylesheet" href="../estilos/estilo-form-login.css">
     <link rel="stylesheet" href="../estilos/estilo-form-geral.css">
-    <link rel="stylesheet" href="../estilos/estilo-visualizacao-veiculos.css">   
+    <link rel="stylesheet" href="../estilos/estilo-visualizacao-geral.css">   
     
 </head>
 <body>    
-    <nav>
+    <nav class="cabecalho">
         <a href="#" class="logo"><img src="../imagens/car.png" alt="logo-carro"></a>
 
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Produtos da Loja</a></li>
+            <li class="produtos">
+                <a href="#">Produtos</a>
+                <ul>
+                    <li><a href="formIncluirVeiculo.php">Cadastrar</a></li>
+                    <li><a href="../controlers/controlerVeiculo.php?opcao=2">Consultar</a></li>
+                    <li><a href="#">Show Room</a></li>
+                </ul>
+                <img src="../imagens/seta-para-baixo.png" alt="seta-para-baixo">
+            </li>
             <li class="clientes">
                 <a href="#">Clientes</a>
                 <ul>

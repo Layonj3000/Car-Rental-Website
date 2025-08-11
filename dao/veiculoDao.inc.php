@@ -2,7 +2,7 @@
     require_once "conexao.inc.php";
     require_once "../model/veiculo.inc.php";
 
-    class ProdutoDao{
+    class VeiculoDao{
         private $con;
 
         function __construct(){
@@ -82,6 +82,8 @@
             $sql = $this -> con -> prepare("select * from veiculos where placa = :placa");
             $sql -> bindValue(":placa", $placa);
 
+            $sql -> execute();
+
             $rs = $sql -> fetch(PDO::FETCH_OBJ);
 
             $veiculo = new Veiculo();
@@ -101,6 +103,8 @@
         public function getVeiculosByNome($nome){
             $sql = $this -> con -> prepare("select * from veiculos where nome = :nome");
             $sql -> bindValue(":placa", $nome);
+
+            $sql -> execute();
 
             $veiculos = array();
 
@@ -125,6 +129,8 @@
             $sql = $this -> con -> prepare("select * from veiculos where fabricante = :fabricante");
             $sql -> bindValue(":placa", $fabricante);
 
+            $sql -> execute();
+
             $veiculos = array();
 
             while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
@@ -147,6 +153,8 @@
         public function getVeiculosByMotorizacao($motorizacao){
             $sql = $this -> con -> prepare("select * from veiculos where motorizacao = :motorizacao");
             $sql -> bindValue(":placa", $motorizacao);
+
+            $sql -> execute();
 
             $veiculos = array();
 

@@ -8,7 +8,7 @@
     text-decoration: none;
 }
 
-nav{
+.cabecalho{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -16,42 +16,42 @@ nav{
     border-bottom: 1px solid rgb(187, 184, 184);
 }
 
-nav ul{
+.cabecalho ul{
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-nav ul li{
+.cabecalho ul li{
     position: relative; 
 }
 
-nav > ul > li{
+.cabecalho > ul > li{
     display: block;
     padding: 1em;
 } 
 
-nav ul ul{
+.cabecalho ul ul{
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 0.75rem;
     display: none; 
     border: 1px solid rgb(187, 184, 184);
     border-radius: 0.2em;
     background-color: white;
     min-width: 150px;
-    min-height: 75px;
+    /* min-height: 75px; */
 }
 
-nav ul li:hover>ul{
+.cabecalho ul li:hover>ul{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-nav a button{
+.cabecalho a button{
     padding: 0.3em 0.5em;
     background-color: white;
     border-radius: 0.3rem;
@@ -59,22 +59,23 @@ nav a button{
     color: #0D6EFD;
 }
 
-.logo img{
+.cabecalho .logo img{
     position: absolute; 
     top: 0;
     height: 4.2rem;
 }
 
-.carrinho-de-compras img{
+.cabecalho .carrinho-de-compras img{
     height: 1.7rem;
     width: 2.3rem;
 }
 
-.clientes{
+.cabecalho .clientes{
     align-items: center;
 }
 
-.clientes img{
+.cabecalho .clientes img,
+.cabecalho .produtos img{
     height: 0.5rem;
 }
 

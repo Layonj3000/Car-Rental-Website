@@ -1,5 +1,8 @@
 <?php 
-    include_once "includes/cabecalho.inc.php"
+    include_once "../model/veiculo.inc.php";
+    include_once "includes/cabecalho.inc.php";
+
+    $veiculos = $_SESSION['veiculos'];
 ?>
 
 <div class="form-padrao">
@@ -50,17 +53,19 @@
         </thead>
         <tbody>
             <?php
-                echo "<tr>";
-                echo "<td>Teste1</td>";
-                echo "<td>Teste2</td>";
-                echo "<td>Teste3</td>";
-                echo "<td>Teste1</td>";
-                echo "<td>Teste2</td>";
-                echo "<td>Teste3</td>";
-                echo "<td>Teste1</td>";
-                echo "<td>Teste2</td>";
-                echo "<td class='operacoes'><a class='btn-alterar' href='#'>A</a><a class='btn-excluir' href='#'>X</a></td>";
-                echo "</tr>";
+                foreach($veiculos as $veiculo){
+                    echo "<tr>";
+                    echo "<td>" . $veiculo -> getPlaca() . "</td>";
+                    echo "<td>" . $veiculo -> getNome() . "</td>";
+                    echo "<td>" . $veiculo -> getAnoFabricacao() . "</td>";
+                    echo "<td>" . $veiculo -> getFabricante() . "</td>";
+                    echo "<td>" . $veiculo -> getOpcionais() . "</td>";
+                    echo "<td>" . $veiculo -> getMotorizacao() . "</td>";
+                    echo "<td>" . $veiculo -> getValorBase() . "</td>";
+                    echo "<td>" . $veiculo -> getIdCategoria() . "</td>";
+                    echo "<td class='operacoes'><a class='btn-alterar' href='../controlers/controlerVeiculo.php?opcao=3&placa=". $veiculo -> getPlaca() ."'>A</a><a class='btn-excluir' href='../controlers/controlerVeiculo.php?opcao=5&placa=". $veiculo -> getPlaca() ."'>X</a></td>";
+                    echo "</tr>";
+                }    
             ?>    
         </tbody>
     </table>

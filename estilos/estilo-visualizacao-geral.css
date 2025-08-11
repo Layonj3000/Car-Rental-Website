@@ -23,13 +23,8 @@
     font-weight: bold;
 }
 
-.tabela-visualizacao-veiculos .operacoes{
-    display: flex;
-    gap: 0.5rem;
-}
-
 .tabela-visualizacao-veiculos .operacoes a{
-    margin: 0;
+    margin: 0.25rem;
     padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
     color: white;

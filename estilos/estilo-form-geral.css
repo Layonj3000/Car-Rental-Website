@@ -41,7 +41,6 @@
 } 
 
 .form-padrao .botoes,
-.form-padrao .opcionais,
 .form-padrao .locado{
     flex: 0 1 98%;
 }
