@@ -10,8 +10,7 @@ class Categoria{
         $this -> valor = $valor;
     }
 
-    public function setCategoria($idCategoria, $descricao, $valor){
-        $this -> idCategoria = $idCategoria;
+    public function setCategoria($descricao, $valor){
         $this -> descricao = $descricao;
         $this -> valor = $valor;
     }
