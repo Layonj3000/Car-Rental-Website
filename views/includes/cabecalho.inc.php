@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../estilos/estilo-form-login.css">
     <link rel="stylesheet" href="../estilos/estilo-form-geral.css">
     <link rel="stylesheet" href="../estilos/estilo-visualizacao-geral.css">
+    <link rel="stylesheet" href="../estilos/estilo-home.css">
+
     
 </head>
 <body>    
@@ -16,7 +18,7 @@
         <a href="#" class="logo"><img src="../imagens/car.png" alt="logo-carro"></a>
 
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="../views/index.php">Home</a></li>
             <li class="produtos">
                 <a href="#">Produtos</a>
                 <ul>
@@ -42,7 +44,7 @@
             session_start();
             if(!isset($_SESSION['usuario'])){
         ?>
-                <a href="../formLogin.php" class="btn-login"><button>Login</button></a>
+                <a href="../views/formLogin.php" class="btn-login"><button>Login</button></a>
 
         <?php
             }
