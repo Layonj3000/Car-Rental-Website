@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="../estilos/estilo-form-geral.css">
     <link rel="stylesheet" href="../estilos/estilo-visualizacao-geral.css">
     <link rel="stylesheet" href="../estilos/estilo-home.css">
+    <link rel="stylesheet" href="../estilos/estilo-fale-conosco.css">
+    <link rel="stylesheet" href="../estilos/estilo-contato-sucesso.css">
 
-    
 </head>
 <body>    
     <nav class="cabecalho">
@@ -36,7 +37,7 @@
                 </ul>
                 <img src="../imagens/seta-para-baixo.png" alt="seta-para-baixo">
             </li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="../views/fale-conosco.php">Contato</a></li>
             <li class="carrinho-de-compras"><img src="../imagens/carrinho-de-compras.png" alt="carrinho-de-compras"></li>
         </ul>
 
