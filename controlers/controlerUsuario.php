@@ -1,4 +1,4 @@
-<?
+<?php
     include_once "../dao/usuarioDAO.inc.php";
     $op = $_REQUEST['pOpcao'];
 

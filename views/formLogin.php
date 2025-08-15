@@ -7,8 +7,8 @@
 <div class="div-login">
     <h2>Entre com suas informações de Login</h2>
     <form action="../controlers/controlerUsuario.php" method="get">
-        <input type="text" placeholder="Usuário" name="pUser"><br><br>
-        <input type="password" placeholder="Senha" name="pSenha"><br><br>
+        <input type="text" placeholder="Usuário" name="pUser" required><br><br>
+        <input type="password" placeholder="Senha" name="pSenha" required><br><br>
         <input type="submit" value="EFETUAR LOGIN"><br><br>
         <input type="hidden" value="1" name="pOpcao">
         <?php
