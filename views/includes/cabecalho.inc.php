@@ -16,7 +16,7 @@
 </head>
 <body>    
     <nav class="cabecalho">
-        <a href="#" class="logo"><img src="../imagens/car.png" alt="logo-carro"></a>
+        <a href="../views/index.php" class="logo"><img src="../imagens/car.png" alt="logo-carro"></a>
 
         <ul>
             <li><a href="../views/index.php">Home</a></li>

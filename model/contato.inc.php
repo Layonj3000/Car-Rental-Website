@@ -3,9 +3,9 @@ class Contato {
     
     public function enviarMensagem($nome, $email, $assunto, $mensagem) {
         
-        // 1. Validação dos dados (lógica de negócio)
+        // 1. Validação dos dados 
         if (empty($nome) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($assunto) || empty($mensagem)) {
-            return false; // Retorna false se a validação falhar
+            return false; 
         }
 
         // 2. Lógica para enviar o e-mail
@@ -25,9 +25,10 @@ class Contato {
 
         return $envio_sucesso; 
     }
-    
+
     private function mock_mail($to, $subject, $message, $headers) {
         // Retorna true para simular o sucesso do envio sem precisar de um servidor de e-mail.
+        // Se quiser pode mudar para false para testar
         return true;
     }
 
