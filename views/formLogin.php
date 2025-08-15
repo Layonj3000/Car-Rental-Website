@@ -24,3 +24,5 @@
     </form>
     <a href="#">Não possui uma conta? Cadastre-se aqui</a>
 </div>
+
+<?php require_once "includes/rodape.inc.php"; ?>

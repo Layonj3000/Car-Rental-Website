@@ -2,17 +2,18 @@
     require_once "includes/cabecalho.inc.php"; 
 ?>
 
-<h1 class="text-center">Bem-vindos a nossa Locadora!</h1>
+<h1 class="text-center">Bem-vindos à nossa Locadora de Veículos!</h1>
 
 <section class="my-5">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto fs-5" align="justify">
-                <p>Que tal fazer as suas compras sem precisar sair de casa? Então confira a nossa loja virtual. Os mesmos produtos e qualidade que você encontra nas nossas lojas físicas! <strong>Loja Des Web</strong>, agora também online para você!</p>
-                <p>A <strong>Loja Des Web</strong> oferece uma experiência única para você! Aqui você escolhe se quer comprar na nossa loja física ou virtual, se quer receber o produto por delivery ou retirar nas lojas e se quer pagar com dinheiro, cartão de débito ou crédito, ou via PIX! Só na <strong>Loja Des Web</strong> você compra do seu jeito!</p>
-                <p>Confira nossos produtos e faça suas compras aproveitando nossos Cupons de Desconto, melhores ofertas e promoções imperdíveis!</p>
+                <p>Procurando a melhor opção para a sua próxima viagem, passeio ou para o dia a dia? Na <strong>Locadora Des Web</strong>, você encontra a frota perfeita para a sua necessidade. Carros novos, revisados e com a qualidade que você merece, tudo isso com a facilidade de fazer a sua reserva online!</p>
+                <p>Na <strong>Locadora Des Web</strong>, a experiência de alugar um carro é única. Você pode escolher seu veículo, verificar a disponibilidade, fazer a reserva e até mesmo o pagamento diretamente pelo nosso site. Oferecemos as melhores condições de aluguel e diversas opções de pagamento, incluindo PIX, cartão de débito ou crédito. Alugue do seu jeito, com total flexibilidade e segurança!</p>
+                <p>Confira nossa frota de veículos disponíveis e aproveite nossas ofertas especiais e promoções imperdíveis. Seja para uma escapada de fim de semana ou para uma necessidade de longo prazo, temos o carro ideal para você!</p>
             </div>
         </div>
+    </div>
 </section>
 
 <?php require_once "includes/rodape.inc.php"; ?>

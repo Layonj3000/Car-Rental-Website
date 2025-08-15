@@ -61,3 +61,5 @@
         
     </div>
 </div>
+
+<?php require_once "includes/rodape.inc.php"; ?>

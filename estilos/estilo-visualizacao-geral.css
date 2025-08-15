@@ -1,40 +1,59 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.tabela-visualizacao-veiculos table{
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex: 1; 
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.tabela-visualizacao-veiculos table {
     width: 80%;
     border-collapse: collapse;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .tabela-visualizacao-veiculos th, 
-.tabela-visualizacao-veiculos td{
+.tabela-visualizacao-veiculos td {
     border-bottom: 1px solid #ccc;
     padding: 0.75rem;
     text-align: left;
 }
 
-.tabela-visualizacao-veiculos th{
+.tabela-visualizacao-veiculos th {
     background-color: #CFE2FF;
     font-weight: bold;
 }
 
-.tabela-visualizacao-veiculos .operacoes a{
+.tabela-visualizacao-veiculos .operacoes a {
     margin: 0.25rem;
     padding: 0.2rem 0.5rem;
     border-radius: 0.3rem;
     color: white;
 }
 
-.tabela-visualizacao-veiculos .btn-alterar{
+.tabela-visualizacao-veiculos .btn-alterar {
     background-color: #157347;
-    
 }
 
-.tabela-visualizacao-veiculos .btn-excluir{
+.tabela-visualizacao-veiculos .btn-excluir {
     background-color: #DC3545;
+}
+
+footer {
+    border-top: 1px solid #ddd;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
 }
