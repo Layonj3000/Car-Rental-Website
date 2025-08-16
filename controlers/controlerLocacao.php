@@ -1,24 +1,36 @@
-<?php 
-    require_once "../model/locacao.inc.php";
-    require_once "../dao/locacaoDao.inc.php";
+<?php
+    include_once "../dao/locacaoDao.inc.php";
+    include_once "../utils/funcoesUteis.php";
+    session_start();
 
-    $opcao = $_REQUEST['opcao'];
+    $dao = new LocacaoDao();
+    $op = $_REQUEST['opcao'];
 
-    if($opcao == 2){//selecionar todos
-        $locacaoDao = new locacaoDao();
+    if($op == 1){ 
+        $locacao = new Locacao();
+        
+        $locacao -> setIdLocacao($_REQUEST['id_locacao']);
+        $locacao -> setData($_REQUEST['data']);
+        $locacao -> setValorTotal($_REQUEST['valor_total']);
+        $locacao -> setCpfSocio($_REQUEST['cpf_socio']);
+        $locacao -> setIdVeiculo($_REQUEST['id_veiculo']);
 
-        $data1 = (string)(isset($_REQUEST['dataInicial'])? $_REQUEST['dataInicial']:'');
-        $data2 = (string)(isset($_REQUEST['dataFinal'])? $_REQUEST['dataFinal']:'');
-
-
-        $locacoes = $locacaoDao -> getLocacoesPorPeriodo($data1, $data2);
-
-        session_start();
-
-        $_SESSION['locacoes'] = $locacoes;
+        $dao -> incluirLocacao($locacao);
 
         header("Location: ../views/locacoes/visualizacaoLocacoes.php");
     }
 
+    if($op == 2){ 
+        $dataInicial = isset($_REQUEST['dataInicial']) ? $_REQUEST['dataInicial'] : '';
+        $dataFinal = isset($_REQUEST['dataFinal']) ? $_REQUEST['dataFinal'] : '';
+        
+        
+        if(!empty($dataInicial) || !empty($dataFinal)){
+            $_SESSION['locacoes'] = $dao->getLocacoesPorPeriodo(converteDataMySql($dataInicial), converteDataMySql($dataFinal));
+        } else {
+            $_SESSION['locacoes'] = $dao->getLocacoes();
+        }
 
+        header("Location: ../views/locacoes/visualizacaoLocacoes.php");
+    }
 ?>

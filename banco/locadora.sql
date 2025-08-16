@@ -92,10 +92,23 @@ CREATE TABLE `socios` (
 -- Table structure for table `usuarios`
 --
 
+-- Tabela `usuarios` com a nova coluna `tipo_usuario`
 CREATE TABLE `usuarios` (
-  `user` text DEFAULT NULL,
-  `senha` text DEFAULT NULL
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user` VARCHAR(50) NOT NULL,
+  `senha` VARCHAR(255) NOT NULL,
+  `tipo_usuario` ENUM('administrador', 'comum') NOT NULL DEFAULT 'comum',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+-- Exemplo de um usuário comum e um usuário administrador
+INSERT INTO `usuarios` (`user`, `senha`, `tipo_usuario`) VALUES
+('comum_user', 'senha123', 'comum'),
+('admin', 'senha_admin', 'administrador');
 
 -- --------------------------------------------------------
 

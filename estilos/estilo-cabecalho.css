@@ -146,9 +146,10 @@
 
 @media (min-width: 992px) {
     .cabecalho {
-        justify-content: space-around;
-        margin: 0 14rem;
-        padding: 0.5rem 0;
+        justify-content: space-between; 
+        margin: 0 auto; 
+        padding: 0.5rem 2rem; 
+        max-width: 1400px; 
     }
 
     .btn-menu-mobile {
@@ -160,8 +161,9 @@
         width: auto;
         flex-direction: row;
         align-items: center;
-        gap: .5rem;
+        gap: 1.5rem; 
         margin-top: 0;
+        margin-left: 2rem; 
     }
 
     .menu-principal > li {

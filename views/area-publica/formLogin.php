@@ -12,6 +12,9 @@
         <input type="submit" value="EFETUAR LOGIN"><br><br>
         <input type="hidden" value="1" name="pOpcao">
         <?php
+            if(isset($_GET['aviso']) && $_GET['aviso'] == 'acesso_negado') {
+                echo "<b><font color='red'>Acesso Negado. Esta página é restrita a administradores.</font></b>";
+            }
             if(isset($_REQUEST["erro"]))
             {
                 $tipo = (int)$_REQUEST["erro"];

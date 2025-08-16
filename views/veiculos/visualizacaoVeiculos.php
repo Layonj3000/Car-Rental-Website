@@ -1,7 +1,6 @@
 <?php 
     include_once "../../model/veiculo.inc.php";
     include_once "../includes/cabecalho.inc.php";
-
     $veiculos = $_SESSION['veiculos'];
 ?>
 
