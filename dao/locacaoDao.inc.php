@@ -65,7 +65,7 @@ class LocacaoDao{
     }
 
     public function getLocacoesPorPeriodo($data1, $data2){
-        $sql = $this -> con -> prepare("select * from locacao where data >= :data1 and data <= :data2");
+        $sql = $this -> con -> prepare("select * from locacao where (data >= :data1 or :data1 = '') and (data <= :data2 or :data2 = '')");
 
         $sql -> bindValue(":data1", $data1);
         $sql -> bindValue(":data2", $data2);

@@ -35,6 +35,7 @@
                     <li><a href="../../controlers/controlerExemplar.php?opcao=2">Consultar Exemplar</a></li>
                     <li><a href="../../views/categorias/formIncluirCategoria.php">Cadastrar Categoria</a></li>
                     <li><a href="../../controlers/controlerCategoria.php?opcao=2">Consultar Categoria</a></li>
+                    <li><a href="../../controlers/controlerLocacao.php?opcao=2">Consultar Locações</a></li>
                 </ul>
             </li>
             <li class="clientes tem-submenu">

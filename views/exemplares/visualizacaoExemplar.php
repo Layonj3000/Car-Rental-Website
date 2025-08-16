@@ -8,32 +8,6 @@
 <main>
     <div class="form-padrao">
         <h1>Visualização de Exemplares</h1>
-
-        <!-- <form action="">
-            <div class="padrao">
-                <label for="placa">Id Exemplar:</label>
-                <input type="text" name="idExemplar">
-            </div>
-        
-            <div class="padrao">
-                <label for="nomeVeiculo">Placa Veículo:</label>
-                <input type="text" name="placaVeiculo">
-            </div>
-
-            <div class="padrao">
-                <label for="fabricante">Id Locacao:</label>
-                <input type="text" name="idLocacao">
-            </div>
-        
-            <div class="padrao">
-                <label for="motorizacao">Locado:</label>
-                <input type="text" name="locado">
-            </div>
-
-            <div class="botoes">
-                <input type="submit" value="Buscar">
-            </div>
-        </form> -->
     </div> 
 
     <div class="tabela-visualizacao">
