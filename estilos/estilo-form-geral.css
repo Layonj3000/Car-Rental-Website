@@ -22,7 +22,8 @@
     margin: .50rem auto;
 }
 
-.form-padrao input{
+.form-padrao input, 
+.form-padrao select{
     width: 15rem;
     height: 3rem;
     border: 1px solid rgb(187, 184, 184);
@@ -55,7 +56,8 @@
 .form-padrao input[type="text"],
 .form-padrao input[type="number"],
 .form-padrao input[type="email"],
-.form-padrao input[type="date"]{ 
+.form-padrao input[type="date"],
+.form-padrao select{ 
     width: 100%;
 }
 

@@ -18,7 +18,10 @@
     
     <div class="locado">
         <label for="Locado">Locado:</label>
-        <input type="text" name="Locado" required> 
+        <select name="Locado">
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
+        </select>
     </div>
 
     <input type="hidden" name="opcao" value="1">

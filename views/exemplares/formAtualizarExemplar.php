@@ -21,7 +21,10 @@
     
     <div class="locado">
         <label for="Locado">Locado:</label>
-        <input type="text" name="Locado" value=<?=$exemplar -> getLocado()?> required> 
+        <select name="Locado">
+            <option value="1" <?=$exemplar -> getLocado() == 1? "selected":"" ?>>Sim</option>
+            <option value="0" <?=$exemplar -> getLocado() == 0? "selected": "" ?>>Não</option>
+        </select>
     </div>
 
 

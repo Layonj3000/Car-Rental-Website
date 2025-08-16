@@ -29,7 +29,7 @@
                         echo "<td>" . $exemplar -> getIdExemplar() . "</td>";
                         echo "<td>" . $exemplar -> getPlacaVeiculo() . "</td>";
                         echo "<td>" . $exemplar -> getIdLocacao() . "</td>";
-                        echo "<td>" . $exemplar -> getLocado() . "</td>";
+                        echo "<td>" . ($exemplar -> getLocado() == "1" ? "Sim" : "Não") . "</td>";
                         echo "<td class='operacoes'><a class='btn-alterar' href='../../controlers/controlerExemplar.php?opcao=3&idExemplar=". $exemplar -> getIdExemplar() ."'>A</a><a class='btn-excluir' href='../../controlers/controlerExemplar.php?opcao=5&idExemplar=". $exemplar -> getIdExemplar() ."'>X</a></td>";
                         echo "</tr>";
                     }    
