@@ -18,7 +18,12 @@
     if($opcao == 2){/*selecionar todos*/
         $veiculoDao = new VeiculoDao();
 
-        $veiculos = $veiculoDao -> getVeiculos();
+        $placa = isset($_REQUEST['placa']) ? $_REQUEST['placa'] : "";
+        $nome = isset($_REQUEST['nomeVeiculo']) ? $_REQUEST['nomeVeiculo'] : "";
+        $motorizacao = isset($_REQUEST['motorizacao']) ? $_REQUEST['motorizacao'] : "";
+        $fabricante = isset($_REQUEST['fabricante']) ? $_REQUEST['fabricante'] : "";
+
+        $veiculos = $veiculoDao -> getVeiculos($placa, $nome, $motorizacao, $fabricante);
 
         session_start();
 

@@ -56,8 +56,42 @@
             $sql -> execute();
         }
 
-        public function getVeiculos(){
-            $sql = $this -> con -> query("select * from veiculos");
+        // public function getVeiculos(){
+        //     $sql = $this -> con -> prepare("select * from veiculos");
+
+        //     $veiculos = array();
+
+        //     while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+        //         $veiculo = new Veiculo();
+        //         $veiculo -> setPlaca($rs -> placa);
+        //         $veiculo -> setNome($rs -> nome);
+        //         $veiculo -> setAnoFabricacao($rs -> anoFabricacao);
+        //         $veiculo -> setFabricante($rs -> fabricante);
+        //         $veiculo -> setOpcionais($rs -> opcionais);
+        //         $veiculo -> setMotorizacao($rs -> motorizacao);
+        //         $veiculo -> setValorBase($rs -> valorBase);
+        //         $veiculo -> setIdCategoria($rs -> id_categoria);
+
+        //         $veiculos[] = $veiculo;
+        //     }
+
+        //     return $veiculos;
+        // }
+
+        public function getVeiculos($placa, $nome, $motorizacao, $fabricante){
+            $sql = $this -> con -> prepare("select * 
+                                          from veiculos 
+                                          where (:placa = '' or placa = :placa)
+                                          and (:nome = '' or nome LIKE CONCAT('%', :nome, '%'))
+                                          and (:motorizacao = '' or motorizacao LIKE CONCAT('%', :motorizacao, '%'))
+                                          and (:fabricante = '' or fabricante LIKE CONCAT('%', :fabricante, '%'))");
+
+            $sql -> bindValue(":nome", $nome);
+            $sql -> bindValue(":placa", $placa);
+            $sql -> bindValue(":motorizacao", $motorizacao);
+            $sql -> bindValue(":fabricante", $fabricante);
+
+            $sql ->execute();
 
             $veiculos = array();
 
@@ -100,7 +134,7 @@
             return $veiculo;
         }
 
-        public function getVeiculosByNome($nome){
+        /*public function getVeiculosByNome($nome){
             $sql = $this -> con -> prepare("select * from veiculos where nome = :nome");
             $sql -> bindValue(":placa", $nome);
 
@@ -173,6 +207,6 @@
             }
 
             return $veiculos;
-        }
+        }*/
     }
 ?>

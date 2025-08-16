@@ -9,7 +9,7 @@
     <div class="form-padrao">
         <h1>Busca E Visualização de Veículos</h1>
 
-        <form action="">
+        <form action="../../controlers/controlerVeiculo.php">
             <div class="padrao">
                 <label for="placa">Placa:</label>
                 <input type="text" name="placa">
@@ -29,6 +29,8 @@
                 <label for="motorizacao">Motorizacao:</label>
                 <input type="text" name="motorizacao">
             </div>
+
+            <input type="hidden" name="opcao" value="2">
 
             <div class="botoes">
                 <input type="submit" value="Buscar">

@@ -21,7 +21,7 @@
         <ul>
             <li><a href="../../views/area-publica/index.php">Home</a></li>
             <li class="area-administrativa">
-                <a href="#">Área Admnistrativa</a>
+                <a href="#">Área Administrativa</a>
                 <ul>
                     <li><a href="../../views/veiculos/formIncluirVeiculo.php">Cadastrar Veículo</a></li>
                     <li><a href="../../controlers/controlerVeiculo.php?opcao=2">Consultar Veículo</a></li>

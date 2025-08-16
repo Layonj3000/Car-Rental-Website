@@ -6,7 +6,7 @@ $categorias = $_SESSION['categorias'];
 ?>
 
 <div class="form-padrao">
-    <h1>Busca E Visualização de Veículos</h1>
+    <h1>Busca E Visualização de Categorias</h1>
 
     <form action="../../controlers/controlerCategoria.php">
         <div class="padrao">
