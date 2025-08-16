@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de veículos</title>
 
+    <link rel="stylesheet" href="../../estilos/estilo-showroom.css">
     <link rel="stylesheet" href="../../estilos/estilo-cabecalho.css">
     <link rel="stylesheet" href="../../estilos/estilo-form-login.css">
     <link rel="stylesheet" href="../../estilos/estilo-form-geral.css">
@@ -26,6 +27,7 @@
 
         <ul class="menu-principal">
             <li><a href="../../views/area-publica/index.php">Home</a></li>
+            <li><a href="../../views/area-publica/showRoom.php">Veículos</a></li>
             <li class="area-administrativa tem-submenu">
                 <a href="#">Área Admnistrativa</a>
                 <ul class="submenu-lista">
