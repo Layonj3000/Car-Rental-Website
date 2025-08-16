@@ -10,59 +10,119 @@
 
 .cabecalho {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin: 0 14rem;
     border-bottom: 1px solid rgb(187, 184, 184);
+    flex-wrap: wrap;
+    padding: 1rem;
 }
 
-.cabecalho ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-/* Aplica o efeito de hover nos itens de menu principais */
-.cabecalho > ul > li {
-    position: relative;
-    display: block;
-    padding: 1em;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-.cabecalho > ul > li:hover {
-    transform: scale(1.05);
-}
-
-.cabecalho ul ul {
-    position: absolute;
-    top: 100%;
-    left: 0.75rem;
+.menu-principal {
     display: none;
-    border: 1px solid rgb(187, 184, 184);
-    border-radius: 0.2em;
-    background-color: white;
-    min-width: 150px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+    margin-top: 1rem;
 }
 
-.cabecalho ul li:hover > ul {
+.cabecalho.menu-aberto .menu-principal {
+    display: flex;
+}
+
+.btn-menu-mobile {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.btn-menu-mobile .linha {
+    width: 100%;
+    height: 3px;
+    background-color: black;
 }
 
-/* Estiliza os links do submenu */
-.cabecalho ul ul li a {
+.menu-principal > li {
+    position: relative;
     display: block;
-    padding: 0.5em 1em;
+    padding: 0.8em;
+    cursor: pointer;
+}
+
+.menu-principal > li > a {
+    position: relative;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.25rem;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.submenu-lista {
+    display: none !important;
+    list-style: none;
+    padding: .25rem 0;
+    background-color: #fff;
+    border: 1px solid rgb(187, 184, 184);
+    border-radius: .3rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+.submenu-lista li {
+    width: 100%;
+}
+.submenu-lista a {
+    display: block;
+    padding: .6rem 1rem;
+    white-space: nowrap;
+    transition: background-color 0.2s ease-in-out;
+}
+.submenu-lista a:hover {
+    background-color: rgba(13, 110, 253, 0.08);
+    color: #0D6EFD;
+}
+
+.tem-submenu.aberto > .submenu-lista {
+    display: block !important;
+    position: static;
+    margin-top: .35rem;
+}
+
+.cabecalho .logo img {
+    height: 4.2rem;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+.cabecalho .logo img:hover {
+    transform: scale(1.05);
+}
+
+.cabecalho .opcoes-usuario {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.cabecalho .carrinho-de-compras img {
+    height: 2.0rem;
+    width: auto;
+    cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
+.cabecalho .carrinho-de-compras img:hover {
+    transform: scale(1.1);
+}
 
-.cabecalho ul ul li a:hover {
-    transform: scale(1.05);
+.btn-login a,
+.btn-login a:hover,
+.btn-login a:focus,
+.btn-login a:active,
+.btn-sair a,
+.btn-sair a:hover,
+.btn-sair a:focus,
+.btn-sair a:active {
+    text-decoration: none !important;
 }
 
 .cabecalho a button {
@@ -74,39 +134,73 @@
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
-
-.cabecalho .logo img {
-    height: 4.2rem;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.cabecalho .logo img:hover {
+.cabecalho .btn-login:hover button,
+.cabecalho .btn-sair:hover button {
     transform: scale(1.05);
-}
-
-.cabecalho .carrinho-de-compras img {
-    height: 1.7rem;
-    width: auto;
-    margin-left: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-.cabecalho .carrinho-de-compras img:hover {
-    transform: scale(1.1);
-}
-
-.cabecalho .clientes {
-    align-items: center;
 }
 
 .cabecalho .clientes img,
 .cabecalho .area-administrativa img {
-    height: 0.5rem;
+    height: .5rem;
 }
 
-.cabecalho .btn-login:hover button,
-.cabecalho .btn-sair:hover button {
-    transform: scale(1.05);
+@media (min-width: 992px) {
+    .cabecalho {
+        justify-content: space-around;
+        margin: 0 14rem;
+        padding: 0.5rem 0;
+    }
+
+    .btn-menu-mobile {
+        display: none;
+    }
+
+    .menu-principal {
+        display: flex !important;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 0;
+    }
+
+    .menu-principal > li {
+        padding: 0.8rem;
+    }
+
+    .menu-principal > li:not(.btn-login):not(.btn-sair) > a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #0D6EFD;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .menu-principal > li:not(.btn-login):not(.btn-sair) > a:hover::after {
+        width: 100%;
+    }
+
+    .menu-principal > li > .submenu-lista {
+        position: absolute;
+        top: calc(100% + .35rem);
+        left: 50%; 
+        transform: translateX(-50%); 
+        min-width: 220px;
+        z-index: 1000;
+    }
+
+    .menu-principal > li.tem-submenu:hover > .submenu-lista {
+        display: block !important;
+    }
+
+    .menu-principal > li.tem-submenu.aberto > .submenu-lista {
+        display: none !important;
+    }
+    
+    .cabecalho .carrinho-de-compras img {
+        height: 2.5rem;
+    }
 }

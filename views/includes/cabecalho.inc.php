@@ -14,52 +14,74 @@
     <link rel="stylesheet" href="../../estilos/estilo-contato-sucesso.css">
 
 </head>
-<body>    
+<body>
     <nav class="cabecalho">
-        <a href="../../views/area-publica/index.php" class="logo"><img src="../../imagens/logovelocity.png" alt="logo-carro"></a>
+        <button class="btn-menu-mobile">
+            <span class="linha"></span>
+            <span class="linha"></span>
+            <span class="linha"></span>
+        </button>
+        
+        <a href="../../views/area-publica/index.php" class="logo"><img src="../../imagens/logocar.png" alt="logo-carro"></a>
 
-        <ul>
+        <ul class="menu-principal">
             <li><a href="../../views/area-publica/index.php">Home</a></li>
-            <li class="area-administrativa">
-                <a href="#">Área Administrativa</a>
-                <ul>
+            <li class="area-administrativa tem-submenu">
+                <a href="#">Área Admnistrativa</a>
+                <ul class="submenu-lista">
                     <li><a href="../../views/veiculos/formIncluirVeiculo.php">Cadastrar Veículo</a></li>
                     <li><a href="../../controlers/controlerVeiculo.php?opcao=2">Consultar Veículo</a></li>
                     <li><a href="../../views/exemplares/formIncluirExemplar.php">Cadastrar Exemplar</a></li>
                     <li><a href="../../controlers/controlerExemplar.php?opcao=2">Consultar Exemplar</a></li>
                     <li><a href="../../views/categorias/formIncluirCategoria.php">Cadastrar Categoria</a></li>
                     <li><a href="../../controlers/controlerCategoria.php?opcao=2">Consultar Categoria</a></li>
-                    <li><a href="../../controlers/controlerSocio.php?opcao=2">Consultar Sócios</a></li>
                 </ul>
-                <img src="../../imagens/seta-para-baixo.png" alt="seta-para-baixo">
             </li>
-            <li class="clientes">
+            <li class="clientes tem-submenu">
                 <a href="#">Clientes</a>
-                <ul>
+                <ul class="submenu-lista">
                     <li><a href="#">Cadastrar</a></li>
                     <li><a href="#">Seus Dados</a></li>
                 </ul>
-                <img src="../../imagens/seta-para-baixo.png" alt="seta-para-baixo">
             </li>
             <li><a href="../../views/area-publica/fale-conosco.php">Contato</a></li>
             <li class="carrinho-de-compras"><img src="../../imagens/carrinho-de-compra.png" alt="carrinho-de-compras"></li>
+            <?php
+                session_start();
+                if(!isset($_SESSION['usuario'])){
+            ?>
+                    <li class="btn-login"><a href="../../views/area-publica/formLogin.php"><button>Login</button></a></li>
+            <?php
+                }
+                else{
+            ?>
+                    <li class="btn-sair"><a href="../../controlers/controlerUsuario.php?pOpcao=2"><button>Sair</button></a></li>
+            <?php
+                }
+            ?>
         </ul>
-
-        <?php
-            session_start();
-            if(!isset($_SESSION['usuario'])){
-        ?>
-                <a href="../../views/area-publica/formLogin.php" class="btn-login"><button>Login</button></a>
-
-        <?php
-            }
-            else{
-        ?>
-                <a href="../../controlers/controlerUsuario.php?pOpcao=2" class="btn-sair"><button>Sair</button></a> 
-        <?php
-            }
-
-        ?>
     </nav>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnMenuMobile = document.querySelector('.btn-menu-mobile');
+            const cabecalho = document.querySelector('.cabecalho');
+            const submenus = document.querySelectorAll('.tem-submenu');
+
+            btnMenuMobile.addEventListener('click', function() {
+                cabecalho.classList.toggle('menu-aberto');
+            });
+
+            submenus.forEach(function(item) {
+                const link = item.querySelector('a');
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth < 768) {
+                        e.preventDefault();
+                        item.classList.toggle('aberto');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
