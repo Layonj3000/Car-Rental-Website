@@ -27,6 +27,8 @@
                     <li><a href="../../controlers/controlerVeiculo.php?opcao=2">Consultar Veículo</a></li>
                     <li><a href="../../views/exemplares/formIncluirExemplar.php">Cadastrar Exemplar</a></li>
                     <li><a href="../../controlers/controlerExemplar.php?opcao=2">Consultar Exemplar</a></li>
+                    <li><a href="../../views/categorias/formIncluirCategoria.php">Cadastrar Categoria</a></li>
+                    <li><a href="../../controlers/controlerCategoria.php?opcao=2">Consultar Categoria</a></li>
                 </ul>
                 <img src="../../imagens/seta-para-baixo.png" alt="seta-para-baixo">
             </li>

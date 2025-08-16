@@ -27,7 +27,7 @@ $categorias = $_SESSION['categorias'];
     </form>
 </div>
 
-<div class="tabela-visualizacao-veiculos">
+<div class="tabela-visualizacao">
     <table>
         <thead>
         <tr>
