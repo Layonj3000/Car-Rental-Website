@@ -1,1 +1,1 @@
-ErrorDocument 404 /locadora-de-veiculos/views/404.php
+ErrorDocument 404 /locadora-de-veiculos/views/area-publica/404.php
