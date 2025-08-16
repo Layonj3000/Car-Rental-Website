@@ -29,6 +29,7 @@
                     <li><a href="../../controlers/controlerExemplar.php?opcao=2">Consultar Exemplar</a></li>
                     <li><a href="../../views/categorias/formIncluirCategoria.php">Cadastrar Categoria</a></li>
                     <li><a href="../../controlers/controlerCategoria.php?opcao=2">Consultar Categoria</a></li>
+                    <li><a href="../../controlers/controlerSocio.php?opcao=2">Consultar Sócios</a></li>
                 </ul>
                 <img src="../../imagens/seta-para-baixo.png" alt="seta-para-baixo">
             </li>
