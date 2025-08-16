@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,7 @@
     text-decoration: none;
 }
 
-.cabecalho{
+.cabecalho {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -16,65 +16,97 @@
     border-bottom: 1px solid rgb(187, 184, 184);
 }
 
-.cabecalho ul{
+.cabecalho ul {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.cabecalho ul li{
-    position: relative; 
-}
-
-.cabecalho > ul > li{
+/* Aplica o efeito de hover nos itens de menu principais */
+.cabecalho > ul > li {
+    position: relative;
     display: block;
     padding: 1em;
-} 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
 
-.cabecalho ul ul{
+.cabecalho > ul > li:hover {
+    transform: scale(1.05);
+}
+
+.cabecalho ul ul {
     position: absolute;
     top: 100%;
     left: 0.75rem;
-    display: none; 
+    display: none;
     border: 1px solid rgb(187, 184, 184);
     border-radius: 0.2em;
     background-color: white;
     min-width: 150px;
-    /* min-height: 75px; */
 }
 
-.cabecalho ul li:hover>ul{
+.cabecalho ul li:hover > ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-.cabecalho a button{
+/* Estiliza os links do submenu */
+.cabecalho ul ul li a {
+    display: block;
+    padding: 0.5em 1em;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cabecalho ul ul li a:hover {
+    transform: scale(1.05);
+}
+
+.cabecalho a button {
     padding: 0.3em 0.5em;
     background-color: white;
     border-radius: 0.3rem;
     border: 1px solid #0D6EFD;
     color: #0D6EFD;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
-.cabecalho .logo img{
-    position: absolute; 
-    top: 0;
+.cabecalho .logo img {
     height: 4.2rem;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 }
 
-.cabecalho .carrinho-de-compras img{
+.cabecalho .logo img:hover {
+    transform: scale(1.05);
+}
+
+.cabecalho .carrinho-de-compras img {
     height: 1.7rem;
-    width: 2.3rem;
+    width: auto;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
 
-.cabecalho .clientes{
+.cabecalho .carrinho-de-compras img:hover {
+    transform: scale(1.1);
+}
+
+.cabecalho .clientes {
     align-items: center;
 }
 
 .cabecalho .clientes img,
-.cabecalho .area-administrativa img{
+.cabecalho .area-administrativa img {
     height: 0.5rem;
+}
+
+.cabecalho .btn-login:hover button,
+.cabecalho .btn-sair:hover button {
+    transform: scale(1.05);
 }

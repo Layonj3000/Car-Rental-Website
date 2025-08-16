@@ -16,7 +16,7 @@
 </head>
 <body>    
     <nav class="cabecalho">
-        <a href="../../views/area-publica/index.php" class="logo"><img src="../../imagens/car.png" alt="logo-carro"></a>
+        <a href="../../views/area-publica/index.php" class="logo"><img src="../../imagens/logovelocity.png" alt="logo-carro"></a>
 
         <ul>
             <li><a href="../../views/area-publica/index.php">Home</a></li>
@@ -41,7 +41,7 @@
                 <img src="../../imagens/seta-para-baixo.png" alt="seta-para-baixo">
             </li>
             <li><a href="../../views/area-publica/fale-conosco.php">Contato</a></li>
-            <li class="carrinho-de-compras"><img src="../../imagens/carrinho-de-compras.png" alt="carrinho-de-compras"></li>
+            <li class="carrinho-de-compras"><img src="../../imagens/carrinho-de-compra.png" alt="carrinho-de-compras"></li>
         </ul>
 
         <?php
