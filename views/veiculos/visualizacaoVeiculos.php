@@ -1,6 +1,6 @@
 <?php 
-    include_once "../model/veiculo.inc.php";
-    include_once "includes/cabecalho.inc.php";
+    include_once "../../model/veiculo.inc.php";
+    include_once "../includes/cabecalho.inc.php";
 
     $veiculos = $_SESSION['veiculos'];
 ?>
@@ -36,7 +36,7 @@
         </form>
     </div>
 
-    <div class="tabela-visualizacao-veiculos">
+    <div class="tabela-visualizacao">
 
         <table>
             <thead>
@@ -64,7 +64,7 @@
                         echo "<td>" . $veiculo -> getMotorizacao() . "</td>";
                         echo "<td>" . $veiculo -> getValorBase() . "</td>";
                         echo "<td>" . $veiculo -> getIdCategoria() . "</td>";
-                        echo "<td class='operacoes'><a class='btn-alterar' href='../controlers/controlerVeiculo.php?opcao=3&placa=". $veiculo -> getPlaca() ."'>A</a><a class='btn-excluir' href='../controlers/controlerVeiculo.php?opcao=5&placa=". $veiculo -> getPlaca() ."'>X</a></td>";
+                        echo "<td class='operacoes'><a class='btn-alterar' href='../../controlers/controlerVeiculo.php?opcao=3&placa=". $veiculo -> getPlaca() ."'>A</a><a class='btn-excluir' href='../../controlers/controlerVeiculo.php?opcao=5&placa=". $veiculo -> getPlaca() ."'>X</a></td>";
                         echo "</tr>";
                     }    
                 ?>    
@@ -73,4 +73,4 @@
     </div>
 </main>
 
-<?php require_once "includes/rodape.inc.php"; ?>
+<?php require_once "../includes/rodape.inc.php"; ?>

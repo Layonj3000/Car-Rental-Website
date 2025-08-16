@@ -14,11 +14,11 @@
         $resultado = $contato->enviarMensagem($nome, $email, $assunto, $mensagem);
 
         if ($resultado) {
-            header("Location: ../views/contato-sucesso.php");
+            header("Location: ../views/area-publica/contato-sucesso.php");
             exit;
         } else {
             $_SESSION['erro'] = 'Não foi possível enviar a mensagem. Tente novamente.';
-            header("Location: ../views/fale-conosco.php");
+            header("Location: ../views/area-publica/fale-conosco.php");
             exit;
         }
     }

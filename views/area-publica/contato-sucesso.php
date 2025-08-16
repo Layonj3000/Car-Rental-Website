@@ -1,5 +1,5 @@
 <?php
-    require_once "includes/cabecalho.inc.php"; 
+    require_once "../includes/cabecalho.inc.php"; 
 ?>
 
 <main class="sucesso-container">
@@ -10,4 +10,4 @@
     </div>
 </main>
 
-<?php require_once "includes/rodape.inc.php"; ?>
+<?php require_once "../includes/rodape.inc.php"; ?>

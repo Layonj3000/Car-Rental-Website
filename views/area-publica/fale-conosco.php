@@ -1,5 +1,5 @@
 <?php
-    require_once "includes/cabecalho.inc.php"; 
+    require_once "../includes/cabecalho.inc.php"; 
 ?>
 
 <main class="fale-conosco-container">
@@ -19,7 +19,7 @@
         <p><strong>E-mail:</strong> contato@locadoradesweb.com</p>
     </div>
 
-    <form class="formulario-contato" action="../controlers/controlerFaleconosco.php" method="POST">
+    <form class="formulario-contato" action="../../controlers/controlerFaleconosco.php" method="POST">
         <div class="form-group">
             <label for="nome">Nome Completo</label>
             <input type="text" id="nome" name="nome" required>
@@ -46,4 +46,4 @@
     </form>
 </main>
 
-<?php require_once "includes/rodape.inc.php"; ?>
+<?php require_once "../includes/rodape.inc.php"; ?>

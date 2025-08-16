@@ -12,12 +12,12 @@ $categoria = $_SESSION['categoria'];
     <form action="../../controlers/controlerCategoria.php">
         <div class="padrao">
             <label for="descricao">Descrição:</label>
-            <input type="text" name="descricao" id="descricao" value=<?= $categoria->getDescricao() ?>>
+            <input type="text" name="descricao" id="descricao" value=<?= $categoria->getDescricao() ?> required>
         </div>
 
         <div class="padrao">
             <label for="valor">Valor:</label>
-            <input type="number" name="valor" id="valor" value=<?= $categoria->getValor() ?>>
+            <input type="number" name="valor" id="valor" value=<?= $categoria->getValor() ?> required>
         </div>
 
         <div class="botoes">

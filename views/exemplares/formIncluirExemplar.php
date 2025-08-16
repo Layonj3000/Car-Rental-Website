@@ -1,34 +1,33 @@
 <?php 
-    include_once "includes/cabecalho.inc.php";
+    include_once "../includes/cabecalho.inc.php";
 ?>
 
 <div class="form-padrao">
 <h1>Inclusão de Exemplar</h1>
 
-<form action="">
+<form action="../../controlers/controlerExemplar.php">
     <div class="padrao">
         <label for="placaVeiculo">Placa Veiculo:</label>
-        <input type="text" name="placaVeiculo">
+        <input type="text" name="placaVeiculo" required>
     </div>
     
     <div class="padrao">
         <label for="idLocacao">ID Locacao:</label>
-        <input type="text" name="idLocacao">
+        <input type="text" name="idLocacao" required>
     </div>
     
     <div class="locado">
         <label for="Locado">Locado:</label>
-        <input type="text" name="Locado"> 
+        <input type="text" name="Locado" required> 
     </div>
+
+    <input type="hidden" name="opcao" value="1">
 
     <div class="botoes">
         <input type="submit" value="Incluir">
         <input type="button" value="Cancelar">
     </div>
 </form>
-    <div>
-        
-    </div>
 </div>
 
-<?php require_once "includes/rodape.inc.php"; ?>
+<?php require_once "../includes/rodape.inc.php"; ?>

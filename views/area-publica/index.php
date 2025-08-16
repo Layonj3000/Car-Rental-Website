@@ -1,5 +1,5 @@
 <?php
-    require_once "includes/cabecalho.inc.php"; 
+    require_once "../includes/cabecalho.inc.php"; 
 ?>
 
 <h1 class="text-center">Bem-vindos à nossa Locadora de Veículos!</h1>
@@ -16,4 +16,4 @@
     </div>
 </section>
 
-<?php require_once "includes/rodape.inc.php"; ?>
+<?php require_once "../includes/rodape.inc.php"; ?>

@@ -14,10 +14,10 @@
         {
             session_start();
             $_SESSION["usuario"] = $usuario;
-            header("Location: ../views/visualizacaoVeiculos.php");
+            header("Location: ../views/veiculos/visualizacaoVeiculos.php");
         }
         else {
-            header("Location: ../views/formLogin.php?erro=1");
+            header("Location: ../views/area-publica/formLogin.php?erro=1");
         }
 
     }
@@ -26,6 +26,6 @@
     {
         session_start();
         unset($_SESSION['usuario']);
-        header("Location: ../views/formLogin.php");
+        header("Location: ../views/area-publica/formLogin.php");
     }
 ?>

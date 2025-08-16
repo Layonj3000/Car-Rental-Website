@@ -24,7 +24,7 @@
 
         $_SESSION['veiculos'] = $veiculos;
 
-        header("Location: ../views/visualizacaoVeiculos.php");
+        header("Location: ../views/veiculos/visualizacaoVeiculos.php");
     }
 
     if($opcao == 3){/*selecionar para atualizar*/
@@ -38,7 +38,7 @@
 
         $_SESSION['veiculo'] = $veiculo;
 
-        header("Location: ../views/formAtualizarVeiculo.php");
+        header("Location: ../views/veiculos/formAtualizarVeiculo.php");
     }
 
     if($opcao == 4){/*atualizar*/

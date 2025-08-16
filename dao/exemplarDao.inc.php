@@ -23,9 +23,10 @@ class ExemplarDao{
 
     public function atualizarExemplar(Exemplar $exemplar){
         $sql = $this -> con -> prepare("update exemplares set placa_veiculo = :placa_veiculo, 
-                                                              id_locacao = :id_locacal, 
+                                                              id_locacao = :id_locacao, 
                                                               locado = :locado
                                                               where id_exemplar = :id_exemplar");
+                                                              
         $sql -> bindValue(":id_exemplar", $exemplar -> getIdExemplar());
         $sql -> bindValue(":placa_veiculo", $exemplar -> getPlacaVeiculo());
         $sql -> bindValue(":id_locacao", $exemplar -> getIdLocacao());
@@ -41,5 +42,46 @@ class ExemplarDao{
 
         $sql -> execute();
     }
+
+    public function getExemplares(){
+        $sql = $this -> con -> query("select * from exemplares");
+
+        $exemplares = array();
+
+        while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+            $exemplar = new Exemplar();
+
+            $exemplar -> setIdExemplar($rs -> id_exemplar);
+            $exemplar -> setPlacaVeiculo($rs -> placa_veiculo);
+            $exemplar -> setIdLocacao($rs -> id_locacao);
+            $exemplar -> setLocado($rs -> locado);
+
+            $exemplares[] = $exemplar;
+        }
+
+        return $exemplares;
+    }
+
+        public function getExemplarById($id){
+        $sql = $this -> con -> prepare("select * from exemplares where id_exemplar = :id");
+
+        $sql -> bindValue(":id", $id);
+
+        $sql -> execute();
+
+        $exemplar = new Exemplar();
+
+        if($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+            
+            $exemplar -> setIdExemplar($rs -> id_exemplar);
+            $exemplar -> setPlacaVeiculo($rs -> placa_veiculo);
+            $exemplar -> setIdLocacao($rs -> id_locacao);
+            $exemplar -> setLocado($rs -> locado);
+        }
+
+        return $exemplar;
+    }
+
+
 }
 ?>

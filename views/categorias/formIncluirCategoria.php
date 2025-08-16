@@ -8,12 +8,12 @@ include_once "../includes/cabecalho.inc.php";
     <form action="../../controlers/controlerCategoria.php">
         <div class="padrao">
             <label for="descricao">Descricao:</label>
-            <input type="text" id="descricao" name="descricao"/>
+            <input type="text" id="descricao" name="descricao" required/>
         </div>
 
         <div class="padrao">
             <label for="valor">Valor:</label>
-            <input type="number" step="0.01" id="valor" name="valor">
+            <input type="number" step="0.01" id="valor" name="valor" required>
         </div>
 
         <div class="botoes">
