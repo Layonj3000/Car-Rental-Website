@@ -1,7 +1,10 @@
 <?php 
     include_once "../../model/veiculo.inc.php";
     include_once "../includes/cabecalho.inc.php";
-
+    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']->tipo_usuario !== 'administrador') {
+        header("Location: ../area-publica/formLogin.php?aviso=acesso_negado");
+        exit;
+    }
     $veiculo = new Veiculo();
     $veiculo = $_SESSION['veiculo'];
 ?>

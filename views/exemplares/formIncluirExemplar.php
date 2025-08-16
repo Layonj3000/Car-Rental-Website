@@ -1,5 +1,9 @@
 <?php 
     include_once "../includes/cabecalho.inc.php";
+    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']->tipo_usuario !== 'administrador') {
+        header("Location: ../area-publica/formLogin.php?aviso=acesso_negado");
+        exit;
+    }
 ?>
 
 <div class="form-padrao">
@@ -18,7 +22,10 @@
     
     <div class="locado">
         <label for="Locado">Locado:</label>
-        <input type="text" name="Locado" required> 
+        <select name="Locado">
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
+        </select>
     </div>
 
     <input type="hidden" name="opcao" value="1">

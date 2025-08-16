@@ -65,20 +65,37 @@ class LocacaoDao{
     }
 
     public function getLocacoesPorPeriodo($data1, $data2){
-        $sql = $this -> con -> prepare("select * from locacao where data >= :data1 and data <= :data2");
+        $sql = "select * from locacao";
+        $where_clauses = [];
+        $params = [];
 
-        $sql -> bindValue(":data1", $data1);
-        $sql -> bindValue(":data2", $data2);
+        if (!empty($data1)) {
+            $where_clauses[] = "data >= :data1";
+            $params[':data1'] = $data1;
+        }
+        
+        if (!empty($data2)) {
+            $where_clauses[] = "data <= :data2";
+            $params[':data2'] = $data2;
+        }
 
-        $sql -> execute();
+        if (!empty($where_clauses)) {
+            $sql .= " WHERE " . implode(" AND ", $where_clauses);
+        }
 
+        $stmt = $this->con->prepare($sql);
+        
+        foreach ($params as $key => &$val) {
+            $stmt->bindParam($key, $val);
+        }
+        
+        $stmt->execute();
+        
         $locacoes = array();
         
-        while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+        while($rs = $stmt->fetch(PDO::FETCH_OBJ)){
             $locacao = new Locacao();
-
-            $locacao -> setLocacaoComId($rs -> id_locacao, $rs -> data, $rs -> valor_total, $rs -> cpf_socio, $rs -> id_veiculo);
-
+            $locacao->setLocacaoComId($rs->id_locacao, $rs->data, $rs->valor_total, $rs->cpf_socio, $rs->id_veiculo);
             $locacoes[] = $locacao;
         }
 

@@ -1,7 +1,10 @@
 <?php 
     include_once "../../model/exemplar.inc.php";
     include_once "../includes/cabecalho.inc.php";
-
+    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']->tipo_usuario !== 'administrador') {
+        header("Location: ../area-publica/formLogin.php?aviso=acesso_negado");
+        exit;
+    }
     $exemplar = $_SESSION['exemplar'];
 ?>
 
@@ -21,7 +24,10 @@
     
     <div class="locado">
         <label for="Locado">Locado:</label>
-        <input type="text" name="Locado" value=<?=$exemplar -> getLocado()?> required> 
+        <select name="Locado">
+            <option value="1" <?=$exemplar -> getLocado() == 1? "selected":"" ?>>Sim</option>
+            <option value="0" <?=$exemplar -> getLocado() == 0? "selected": "" ?>>Não</option>
+        </select>
     </div>
 
 

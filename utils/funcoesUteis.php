@@ -1,11 +1,16 @@
 <?php
 
     function formatarData($data){
-        return date('d/m/Y',$data);
+        $timestamp = strtotime($data);
+        return date('d/m/Y', $timestamp);
     }
 
     function converteDataMySql($data){
-        return date('Y-m-d', $data);
+        if (!empty($data)) {
+            $timestamp = strtotime($data);
+            return date('Y-m-d', $timestamp);
+        }
+        return null;
     }
 
 ?>

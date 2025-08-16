@@ -1,9 +1,12 @@
 <?php
-include_once "../../model/categoria.inc.php";
-include_once "../includes/cabecalho.inc.php";
-
-$categoria = new Categoria();
-$categoria = $_SESSION['categoria'];
+    include_once "../../model/categoria.inc.php";
+    include_once "../includes/cabecalho.inc.php";
+    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']->tipo_usuario !== 'administrador') {
+        header("Location: ../area-publica/formLogin.php?aviso=acesso_negado");
+        exit;
+    }
+    $categoria = new Categoria();
+    $categoria = $_SESSION['categoria'];
 ?>
 
 <div class="form-padrao">
