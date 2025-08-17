@@ -37,7 +37,7 @@
 
     <div class="botoes">
         <input type="submit" value="Atualizar">
-        <input type="button" value="Cancelar">
+        <input type="button" value="Cancelar" onclick="cancelar()">
     </div>
 </form>
     <div>
@@ -46,3 +46,9 @@
 </div>
 
 <?php require_once "../includes/rodape.inc.php"; ?>
+
+<script>
+    function cancelar(){
+        window.location.href = "visualizacaoExemplar.php";
+    }
+</script>

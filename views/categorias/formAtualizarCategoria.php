@@ -25,10 +25,16 @@
 
         <div class="botoes">
             <input type="submit" value="Atualizar">
-            <input type="button" value="Cancelar">
+            <input type="button" value="Cancelar" onclick="cancelar()">
         </div>
 
         <input type="hidden" name="id_categoria" value="<?= $categoria->getIdCategoria() ?>">
         <input type="hidden" name="opcao" value="4">
     </form>
 </div>
+
+<script>
+    function cancelar(){
+        window.location.href = "visualizacaoCategorias.php";
+    }
+</script>

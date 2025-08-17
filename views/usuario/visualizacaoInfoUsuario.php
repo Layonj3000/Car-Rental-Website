@@ -7,7 +7,7 @@
 ?>
 
 <div class="form-padrao">
-        <h1>Informações do Usuário</h1>
+        <h1>Seus Dados</h1>
         
         <form action="../../controlers/controlerUsuario.php">
             <div class="padrao">

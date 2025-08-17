@@ -6,6 +6,9 @@
 ?>
 
 <main>
+    <div class="form-padrao">
+        <h1>Suas Locações</h1>
+    </div>
 
     <div class="tabela-visualizacao">
 

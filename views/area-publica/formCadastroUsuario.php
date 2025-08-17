@@ -48,9 +48,16 @@
             </div>
 
             <div class="botoes">
-                <input type="submit" value="Confirmar Alteração">
+                <input type="submit" value="Confirmar Cadastro">
+                <input type="button" value="Cancelar" onclick="cancelar()">
             </div>
 
             <input type="hidden" name="opcao" value="6">
         </form> 
 </div> 
+
+<script>
+    function cancelar(){
+        window.location.href = "formLogin.php";
+    }
+</script>

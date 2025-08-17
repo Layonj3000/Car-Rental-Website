@@ -22,9 +22,15 @@
 
         <div class="botoes">
             <input type="submit" value="Incluir">
-            <input type="button" value="Cancelar">
+            <input type="button" value="Cancelar" onclick="cancelar()">
         </div>
 
         <input type="hidden" name="opcao" value="1">
     </form>
 </div>
+
+<script>
+    function cancelar(){
+        window.location.href = "visualizacaoCategorias.php";
+    }
+</script>
