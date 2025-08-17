@@ -9,7 +9,7 @@
 <div class="form-padrao">
 <h1>Inclusão de Veículo</h1>
 
-<form action="../../controlers/controlerVeiculo.php">
+<form action="../../controlers/controlerVeiculo.php" method="post" enctype="multipart/form-data">
     <div class="padrao">
         <label for="placa">Placa:</label>
         <input type="text" name="placa" required>
@@ -37,7 +37,7 @@
     
     <div class="padrao">
         <label for="valorBase">Valor Base:</label>
-        <input type="text" name="valorBase" required>
+        <input type="number" name="valorBase" step="0.01" required>
     </div>
     
     <div class="padrao">
@@ -48,6 +48,11 @@
     <div class="padrao">
         <label for="idCategoria">Id Categoria:</label>
         <input type="text" name="idCategoria" required>
+    </div>
+
+    <div class="padrao">
+        <label for="Foto">Foto:</label>
+        <input type="file" name="foto" id="foto" required>
     </div>
 
     <input type="hidden" name="opcao" value="1">

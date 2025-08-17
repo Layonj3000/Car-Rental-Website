@@ -75,4 +75,14 @@ class CategoriaDao
 
         return $categoria;
     }
+
+    public function getValorCategoria($id_categoria)
+    {
+        $sql = $this->con->prepare("select valor from categoria where id_categoria = :id_categoria");
+        $sql->bindValue(":id_categoria", $id_categoria);
+        $sql->execute();
+        $rs = $sql->fetch(PDO::FETCH_OBJ);
+
+        return $rs ? $rs->valor : null;
+    }
 }

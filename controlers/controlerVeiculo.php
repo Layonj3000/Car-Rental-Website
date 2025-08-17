@@ -1,5 +1,6 @@
 <?php
     require_once "../dao/veiculoDao.inc.php";
+    require_once "../utils/funcoesUteis.php";
 
     $opcao = $_REQUEST["opcao"];
 
@@ -8,7 +9,11 @@
 
         $veiculo = new Veiculo();
 
-        $veiculo -> setVeiculoComPlaca($_REQUEST['placa'], $_REQUEST['nomeVeiculo'], $_REQUEST['anoFabricacao'], $_REQUEST['fabricante'], $_REQUEST['opcionais'], $_REQUEST['motorizacao'], $_REQUEST['valorBase'], $_REQUEST['idCategoria']);
+        $fotoReferencia = salvarFoto($_FILES);
+
+        error_log("fotoReferencia: " . print_r($fotoReferencia, true), 3, "debug.log");
+
+        $veiculo -> setVeiculoComPlaca($_REQUEST['placa'], $_REQUEST['nomeVeiculo'], $_REQUEST['anoFabricacao'], $_REQUEST['fabricante'], $_REQUEST['opcionais'], $_REQUEST['motorizacao'], $_REQUEST['valorBase'], $fotoReferencia, $_REQUEST['idCategoria']);
     
         $veiculoDao -> incluirVeiculo($veiculo);
 
@@ -65,4 +70,15 @@
 
         header("Location: controlerVeiculo.php?opcao=2");
     }
-?>
+
+    if($opcao == 6){/*selecionar todos*/
+        $veiculoDao = new VeiculoDao();
+
+        $veiculos = $veiculoDao->getVeiculosComImagem();
+
+        session_start();
+
+        $_SESSION['veiculos'] = $veiculos;
+
+        header("Location: ../views/area-publica/showRoom.php");
+    }
