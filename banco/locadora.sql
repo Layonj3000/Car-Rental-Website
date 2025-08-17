@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2025 at 11:53 PM
+-- Generation Time: Aug 17, 2025 at 12:30 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,7 +42,8 @@ INSERT INTO `categoria` (`id_categoria`, `descricao`, `valor`) VALUES
 (2, 'Passeio', 100),
 (3, 'Van', 270),
 (6, 'Off Road', 312),
-(7, 'Blindado', 231);
+(7, 'Blindado', 231),
+(8, 'Trabalho', 80);
 
 -- --------------------------------------------------------
 
@@ -83,8 +84,7 @@ CREATE TABLE `socios` (
   `rg` varchar(12) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `email` varchar(15) NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `email` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -93,23 +93,20 @@ CREATE TABLE `socios` (
 -- Table structure for table `usuarios`
 --
 
--- Tabela `usuarios` com a nova coluna `tipo_usuario`
 CREATE TABLE `usuarios` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `user` VARCHAR(50) NOT NULL,
-  `senha` VARCHAR(255) NOT NULL,
-  `tipo_usuario` ENUM('administrador', 'comum') NOT NULL DEFAULT 'comum',
-  PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `tipo_usuario` enum('administrador','comum') NOT NULL DEFAULT 'comum'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `usuarios`
 --
 
--- Exemplo de um usuário comum e um usuário administrador
-INSERT INTO `usuarios` (`user`, `senha`, `tipo_usuario`) VALUES
-('comum_user', 'senha123', 'comum'),
-('admin', 'senha_admin', 'administrador');
+INSERT INTO `usuarios` (`id`, `user`, `senha`, `tipo_usuario`) VALUES
+(1, 'comum_user', 'senha123', 'comum'),
+(2, 'admin', 'senha_admin', 'administrador');
 
 -- --------------------------------------------------------
 
@@ -125,8 +122,25 @@ CREATE TABLE `veiculos` (
   `opcionais` text DEFAULT NULL,
   `motorizacao` varchar(50) NOT NULL,
   `valorBase` float NOT NULL,
-  `id_categoria` int(11) NOT NULL
+  `id_categoria` int(11) NOT NULL,
+  `fotoReferencia` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `veiculos`
+--
+
+INSERT INTO `veiculos` (`placa`, `nome`, `anoFabricacao`, `fabricante`, `opcionais`, `motorizacao`, `valorBase`, `id_categoria`, `fotoReferencia`) VALUES
+('HGW4308', 'Triton', 2025, 'Mitsubish', 'Alarme, Ar quente, Banco com regulagem de altura, Computador de bordo, Controle de traçã, Desembaçador traseiro, Ar condicionado, Encosto de cabeça traseiro', '2.4', 209000, 6, '1755396831_68a13adf0c704.jpg'),
+('HSZ5690', 'Range Rover Evoque', 2018, 'Land Rover', 'Travas elétricas, Vidros elétricos, Volante com regulagem de altura, Bancos em couro, Tração 4x4, GPS', '2.0 Turbo', 189890, 1, '1755397377_68a13d01e4037.webp'),
+('JJG2918', 'Pajero Sport', 2020, 'Mitsubish', 'Banco com regulagem de altura, Computador de bordo, Controle de tração, Desembaçador traseiro, Ar condicionado, Encosto de cabeça traseiro, Freio ABS, Limpador traseiro', '2.4 Turbo', 249890, 1, '1755397064_68a13bc838dde.webp'),
+('JRT8733', 'Tiggo 8 Pro', 2024, 'Caoa Cherry', 'Ar, Vidro elétrico, Direção elétrica', '1.5', 189990, 1, '1755396636_68a13a1c15105.webp'),
+('JUP2679', 'Seal', 2024, 'BYD', 'Teto solar, Retrovisor fotocrômico, Travas elétricas, Vidros elétricos, Volante com regulagem de altura, Bancos em couro, GPS', '82,5 Kw', 228900, 2, '1755397193_68a13c497b39d.jpg'),
+('JYD0621', 'Porsche Cayenne E-Hybrid', 2025, 'Porsche', 'Suspensão pneumática adaptável, central multimídia Porsche PCM, bancos em couro, teto solar panorâmico, sistema de som Burmester, faróis LED Matrix, sistema de navegação, aquecimento de bancos', 'V6 turbo de 353cv com motor elétrico de 176cv', 830000, 1, '1755397815_68a13eb76a582.webp'),
+('KDZ1651', 'Volvo XC40 Recharge Pure Electric (EX40)', 2025, 'Volvo', 'Google Maps integrado, assistente Google, Google Play, Apple CarPlay, câmeras 360°, sistema de som premium, bancos aquecidos, teto solar panorâmico, assistência ao condutor', '69 kW', 229900, 1, '1755397747_68a13e7333b9c.webp'),
+('KIJ6735', 'Mercedes-Benz GLE 450 d 4MATIC', 2024, 'Mercedes-Benz', 'Sistema MBUX de segunda geração, faróis LED High-Performance, bancos em couro, sistema de som premium, câmeras 360°, sistema de navegação, ar condicionado automático, volante com sensor táctil', '2.9 ', 729900, 1, '1755397907_68a13f138114d.jpg'),
+('MXA2479', 'Ford Bronco Sport Badlands', 2024, 'Ford', 'Central multimídia SYNC 4 de 13,2\", quadro de instrumentos digital de 12,3\", bancos de couro com aquecimento, volante aquecido, câmeras 360°, piloto automático adaptativo, teto solar, sistema G.O.A.T. de gestão de terrenos', '2.0 ', 252790, 6, '1755397861_68a13ee557fdc.jpg'),
+('NEN3249', 'Mercedes-Benz C250 Coupé Sport', 2025, 'Mercedes-Benz', 'Central multimídia, ar condicionado automático, bancos em couro, câmbio automático, faróis LED, sistema de som premium, controle de estabilidade, airbags múltiplos', '2.0L Turbo', 245900, 2, '1755397703_68a13e4767b88.webp');
 
 --
 -- Indexes for dumped tables
@@ -157,6 +171,12 @@ ALTER TABLE `socios`
   ADD PRIMARY KEY (`cpf`);
 
 --
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `veiculos`
 --
 ALTER TABLE `veiculos`
@@ -170,7 +190,7 @@ ALTER TABLE `veiculos`
 -- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_categoria` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `exemplares`
@@ -183,6 +203,12 @@ ALTER TABLE `exemplares`
 --
 ALTER TABLE `locacao`
   MODIFY `id_locacao` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
