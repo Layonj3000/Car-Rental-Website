@@ -54,6 +54,7 @@
 }
 
 .form-padrao input[type="text"],
+.form-padrao input[type="file"],
 .form-padrao input[type="number"],
 .form-padrao input[type="email"],
 .form-padrao input[type="date"],

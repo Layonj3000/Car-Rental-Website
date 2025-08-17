@@ -11,17 +11,18 @@
         }
 
         public function incluirVeiculo(Veiculo $veiculo){
-            $sql = $this -> con -> prepare("insert into veiculos(placa, nome, anoFabricacao, fabricante, opcionais, motorizacao, valorBase, id_categoria)
-                                                   values(:placa, :nome, :anoFabricacao, :fabricante, :opcionais, :motorizacao, :valorBase, :id_categoria)");
-            
+            $sql = $this -> con -> prepare("insert into veiculos(placa, nome, anoFabricacao, fabricante, opcionais, motorizacao, valorBase, fotoReferencia, id_categoria)
+                                                   values(:placa, :nome, :anoFabricacao, :fabricante, :opcionais, :motorizacao, :valorBase, :fotoReferencia, :id_categoria)");
+
             $sql -> bindValue(":placa", $veiculo -> getPlaca());
             $sql -> bindValue(":nome", $veiculo -> getNome());
             $sql -> bindValue(":anoFabricacao", $veiculo -> getAnoFabricacao());
             $sql -> bindValue(":fabricante", $veiculo -> getFabricante());
             $sql -> bindValue(":opcionais", $veiculo -> getOpcionais());
             $sql -> bindValue(":motorizacao", $veiculo -> getMotorizacao());
-            $sql -> bindValue("valorBase", $veiculo -> getValorBase());
-            $sql -> bindValue("id_categoria", $veiculo -> getIdCategoria());
+            $sql -> bindValue(":valorBase", $veiculo -> getValorBase());
+            $sql -> bindValue(":fotoReferencia", $veiculo -> getFotoReferencia());
+            $sql -> bindValue(":id_categoria", $veiculo -> getIdCategoria());
 
             $sql -> execute();
         }
@@ -50,6 +51,7 @@
             $sql -> bindValue(":opcionais", $veiculo -> getOpcionais());
             $sql -> bindValue(":motorizacao", $veiculo -> getMotorizacao());
             $sql -> bindValue("valorBase", $veiculo -> getValorBase());
+            $sql -> bindValue("fotoReferencia", $veiculo -> getFotoReferencia());
             $sql -> bindValue("id_categoria", $veiculo -> getIdCategoria());
             $sql -> bindValue(":placa", $veiculo -> getPlaca());
 
@@ -112,6 +114,31 @@
             return $veiculos;
         }
 
+        public function getVeiculosComImagem(){
+            $sql = $this -> con -> prepare("select * from veiculos");
+
+            $sql->execute();
+
+            $veiculos = array();
+
+            while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+                $veiculo = new Veiculo();
+                $veiculo -> setPlaca($rs -> placa);
+                $veiculo -> setNome($rs -> nome);
+                $veiculo -> setAnoFabricacao($rs -> anoFabricacao);
+                $veiculo -> setFabricante($rs -> fabricante);
+                $veiculo -> setOpcionais($rs -> opcionais);
+                $veiculo -> setMotorizacao($rs -> motorizacao);
+                $veiculo -> setValorBase($rs -> valorBase);
+                $veiculo -> setFotoReferencia($rs -> fotoReferencia);
+                $veiculo -> setIdCategoria($rs -> id_categoria);
+
+                $veiculos[] = $veiculo;
+            }
+
+            return $veiculos;
+        }
+
         public function getVeiculoByPlaca($placa){
             $sql = $this -> con -> prepare("select * from veiculos where placa = :placa");
             $sql -> bindValue(":placa", $placa);
@@ -157,7 +184,7 @@
             }
 
             return $veiculos;
-        }   
+        }
 
         public function getVeiculosByFabricante($fabricante){
             $sql = $this -> con -> prepare("select * from veiculos where fabricante = :fabricante");
