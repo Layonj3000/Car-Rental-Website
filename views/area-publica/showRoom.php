@@ -20,9 +20,9 @@ $veiculos = $_SESSION['veiculos'];
                         <h5 class="veiculo-name"><?= $veiculo->getNome() ?></h5>
                         <p class="veiculo-year"><?= $veiculo->getAnoFabricacao() ?></p>
                         <h6 class="veiculo-brand">Marca: <?= $veiculo->getFabricante() ?></h6>
-                        <h4 class="veiculo-price">R$ <?= number_format($veiculo->getValorBase(), '2', ',', '.') ?>/dia</h4>
+                        <h4 class="veiculo-price">R$ <?= number_format($veiculo->getValor(), '2', ',', '.') ?>/dia</h4>
                         <div class="veiculo-action">
-                            <a href="../../controlers/controlerVeiculo.php?opcao=1&id=<?= $veiculo->getPlaca() ?>" class="btn-comprar">Reservar</a>
+                            <a href="../../controlers/controlerCarrinho.php?opcao=1&placa=<?= $veiculo->getPlaca() ?>" class="btn-comprar">Reservar</a>
                         </div>
                     </div>
                 </div>

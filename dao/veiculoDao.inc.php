@@ -99,6 +99,9 @@
             $veiculos = array();
 
             while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+                $categoriaDao = new CategoriaDao();
+                $valorCategoria = $categoriaDao->getValorCategoria($rs -> id_categoria);
+
                 $veiculo = new Veiculo();
                 $veiculo -> setPlaca($rs -> placa);
                 $veiculo -> setNome($rs -> nome);
@@ -107,6 +110,7 @@
                 $veiculo -> setOpcionais($rs -> opcionais);
                 $veiculo -> setMotorizacao($rs -> motorizacao);
                 $veiculo -> setValorBase($rs -> valorBase);
+                $veiculo -> setValor($rs -> valorBase + $valorCategoria);
                 $veiculo -> setIdCategoria($rs -> id_categoria);
 
                 $veiculos[] = $veiculo;
@@ -145,22 +149,29 @@
         }
 
         public function getVeiculoByPlaca($placa){
-            $sql = $this -> con -> prepare("select * from veiculos where placa = :placa");
-            $sql -> bindValue(":placa", $placa);
+            $sql = $this->con->prepare("SELECT * FROM veiculos WHERE placa = :placa");
+            $sql->bindValue(":placa", $placa);
+            $sql->execute();
 
-            $sql -> execute();
+            $rs = $sql->fetch(PDO::FETCH_OBJ);
 
-            $rs = $sql -> fetch(PDO::FETCH_OBJ);
+            if ($rs === false) {
+                return null;
+            }
+
+            $categoriaDao = new CategoriaDao();
+            $valorCategoria = $categoriaDao->getValorCategoria($rs -> id_categoria);
 
             $veiculo = new Veiculo();
-            $veiculo -> setPlaca($rs -> placa);
-            $veiculo -> setNome($rs -> nome);
-            $veiculo -> setAnoFabricacao($rs -> anoFabricacao);
-            $veiculo -> setFabricante($rs -> fabricante);
-            $veiculo -> setOpcionais($rs -> opcionais);
-            $veiculo -> setMotorizacao($rs -> motorizacao);
-            $veiculo -> setValorBase($rs -> valorBase);
-            $veiculo -> setIdCategoria($rs -> id_categoria);
+            $veiculo->setPlaca($rs->placa);
+            $veiculo->setNome($rs->nome);
+            $veiculo->setAnoFabricacao($rs->anoFabricacao);
+            $veiculo->setFabricante($rs->fabricante);
+            $veiculo->setOpcionais($rs->opcionais);
+            $veiculo->setMotorizacao($rs->motorizacao);
+            $veiculo->setValorBase($rs->valorBase);
+            $veiculo->setValor($rs->valorBase + $valorCategoria);
+            $veiculo->setIdCategoria($rs->id_categoria);
 
             return $veiculo;
         }

@@ -7,6 +7,7 @@ class Veiculo {
     private $opcionais;
     private $motorizacao;
     private $valorBase;
+    private $valor;
     private $fotoReferencia;
     private $id_categoria;
 
@@ -91,11 +92,11 @@ class Veiculo {
     }
 
     public function getValor() {
-        return $this->valorBase;
+        return $this->valor;
     }
 
     public function setValor($valor) {
-        $this->valorBase = $valor;
+        $this->valor = $valor;
     }
 
     public function getFotoReferencia()

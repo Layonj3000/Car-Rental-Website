@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../estilos/estilo-home.css">
     <link rel="stylesheet" href="../../estilos/estilo-fale-conosco.css">
     <link rel="stylesheet" href="../../estilos/estilo-contato-sucesso.css">
+    <link rel="stylesheet" href="../../estilos/estilo-carrinho.css">
 
 </head>
 <body>
