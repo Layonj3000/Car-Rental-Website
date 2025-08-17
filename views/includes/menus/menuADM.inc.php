@@ -17,7 +17,7 @@
                 <li><a href="../../views/categorias/formIncluirCategoria.php">Cadastrar Categoria</a></li>
                 <li><a href="../../controlers/controlerCategoria.php?opcao=2">Consultar Categoria</a></li>
                 <li><a href="../../controlers/controlerLocacao.php?opcao=2">Consultar Locações</a></li>
-                <li><a href="../../controlers/controlerSocio.php?opcao=2">Consultar Sócio</a></li>
+                <li><a href="../../controlers/controlerUsuarioSocio.php?opcao=7">Consultar Sócio</a></li>
             </ul>
         </li>
         <li><a href="../../views/area-publica/fale-conosco.php">Contato</a></li>

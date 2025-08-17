@@ -14,7 +14,7 @@
 <div class="form-padrao">
         <h1>Seus Dados</h1>
         
-        <form action="../../controlers/controlerUsuario.php">
+        <form action="../../controlers/controlerUsuarioSocio.php">
             <div class="padrao">
                 <label for="user">User:</label>
                 <input type="text" name="user" value=<?=$usuario -> user?>>

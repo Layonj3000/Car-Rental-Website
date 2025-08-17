@@ -10,7 +10,7 @@
         <li class="clientes tem-submenu">
             <a href="#">Clientes</a>
             <ul class="submenu-lista">
-                <li><a href="../../controlers/controlerUsuario.php?opcao=3">Seus Dados</a></li>
+                <li><a href="../../controlers/controlerUsuarioSocio.php?opcao=3">Seus Dados</a></li>
                 <li><a href="../../controlers/controlerLocacao.php?opcao=3">Histórico De Locações</a></li>
             </ul>
         </li>

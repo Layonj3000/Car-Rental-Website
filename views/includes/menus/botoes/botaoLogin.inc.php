@@ -5,7 +5,7 @@
 <?php
     } else {
 ?>
-        <li class="btn-sair"><a href="../../controlers/controlerUsuario.php?opcao=2"><button>Sair</button></a></li>
+        <li class="btn-sair"><a href="../../controlers/controlerUsuarioSocio.php?opcao=2"><button>Sair</button></a></li>
 <?php
     }
 ?>

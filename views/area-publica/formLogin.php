@@ -6,7 +6,7 @@
 
 <div class="div-login">
     <h2>Entre com suas informações de Login</h2>
-    <form action="../../controlers/controlerUsuario.php" method="get">
+    <form action="../../controlers/controlerUsuarioSocio.php" method="get">
         <input type="text" placeholder="Usuário" name="pUser" required><br><br>
         <input type="password" placeholder="Senha" name="pSenha" required><br><br>
         <input type="submit" value="EFETUAR LOGIN"><br><br>

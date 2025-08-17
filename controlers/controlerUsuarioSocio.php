@@ -65,7 +65,7 @@
         $usuarioDao -> atualizarUsuario($usuario);
         $socioDao -> atualizarSocio($socio);
 
-        header("Location: controlerUsuario.php?opcao=3");
+        header("Location: controlerUsuarioSocio.php?opcao=3");
     }
 
     if($op == '5'){
@@ -99,5 +99,17 @@
 
 
         header("Location: ../views/area-publica/formLogin.php");
+    }
+
+    if($op == '7'){//selecionar todos
+        $socioDao = new SocioDao();
+
+        $socios = $socioDao -> getSocios();
+
+        session_start();
+
+        $_SESSION['socios'] = $socios;
+
+        header("Location: ../views/socios/visualizacaoSocio.php");
     }
 ?>
