@@ -9,6 +9,13 @@
 ?>
 
 <main>
+    <?php 
+        if(isset($_SESSION['erro'])){
+            echo "<script>alert('".$_SESSION['erro']."');</script>";
+            unset($_SESSION['erro']);
+        }
+    ?>
+
     <div class="form-padrao">
         <h1>Visualização de Exemplares</h1>
     </div> 

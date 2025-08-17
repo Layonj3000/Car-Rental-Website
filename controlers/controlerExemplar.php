@@ -9,7 +9,13 @@
         $exemplar -> setExemplar($_REQUEST['placaVeiculo'], $_REQUEST['idLocacao'], $_REQUEST['Locado']);
 
         $exemplarDao = new ExemplarDao();
-        $exemplarDao -> incluirExemplar($exemplar);
+
+        if($exemplarDao -> veiculoExists($_REQUEST['placaVeiculo']) == 1 && $exemplarDao -> locacaoExists($_REQUEST['idLocacao']) ==1){
+            $exemplarDao -> incluirExemplar($exemplar);
+        }else{
+            session_start();
+            $_SESSION['erro'] = "Você está tentando inserir um registro de Exemplar com um Veículo ou Locação que não existe!";
+        }
 
         header("Location: controlerExemplar.php?opcao=2");
     }
@@ -45,7 +51,12 @@
 
         $exemplar -> setExemplarComId($_REQUEST['idExemplar'], $_REQUEST['placaVeiculo'], $_REQUEST['idLocacao'], $_REQUEST['Locado']);
 
-        $exemplarDao -> atualizarExemplar($exemplar);
+        if($exemplarDao -> veiculoExists($_REQUEST['placaVeiculo']) == 1 && $exemplarDao -> locacaoExists($_REQUEST['idLocacao']) ==1){
+            $exemplarDao -> atualizarExemplar($exemplar);
+        }else{
+            session_start();
+            $_SESSION['erro'] = "Você está tentando atualizar um registro de Exemplar com um Veículo ou Locação que não existe!";
+        }
 
         header("Location: controlerExemplar.php?opcao=2");
     }

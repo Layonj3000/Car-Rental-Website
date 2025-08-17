@@ -1,6 +1,8 @@
 <?php
 require_once "conexao.inc.php";
 require_once "../model/exemplar.inc.php";
+require_once "../model/locacao.inc.php";
+require_once "../model/veiculo.inc.php";
 
 class ExemplarDao{
     private $con;
@@ -82,6 +84,33 @@ class ExemplarDao{
         return $exemplar;
     }
 
+        public function veiculoExists($placa){
+            $sql = $this -> con -> prepare("select * from veiculos where placa = :placa");
+
+            $sql -> bindValue(":placa", $placa);
+
+            $sql -> execute();
+
+            if($sql -> fetch(PDO::FETCH_OBJ)){
+                return 1;
+            }
+
+            return 0;
+        }
+
+        public function locacaoExists($id_locacao){
+            $sql = $this -> con -> prepare("select * from locacao where id_locacao = :id_locacao");
+
+            $sql -> bindValue(":id_locacao", $id_locacao);
+
+            $sql -> execute();
+
+            if($sql -> fetch(PDO::FETCH_OBJ)){
+                return 1;
+            }
+
+            return 0;
+        }
 
 }
 ?>

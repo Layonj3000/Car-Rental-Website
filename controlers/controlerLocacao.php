@@ -1,4 +1,5 @@
 <?php
+    include_once "../model/locacao.inc.php";
     include_once "../dao/locacaoDao.inc.php";
     include_once "../utils/funcoesUteis.php";
     session_start();
@@ -20,17 +21,15 @@
         header("Location: ../views/locacoes/visualizacaoLocacoes.php");
     }
 
-    if($op == 2){ 
-        $dataInicial = isset($_REQUEST['dataInicial']) ? $_REQUEST['dataInicial'] : '';
-        $dataFinal = isset($_REQUEST['dataFinal']) ? $_REQUEST['dataFinal'] : '';
-        
-        
-        if(!empty($dataInicial) || !empty($dataFinal)){
-            $_SESSION['locacoes'] = $dao->getLocacoesPorPeriodo(converteDataMySql($dataInicial), converteDataMySql($dataFinal));
-        } else {
-            $_SESSION['locacoes'] = $dao->getLocacoes();
-        }
+    if($op == 2){//selecionar todos
+        $locacaoDao = new locacaoDao();
+
+        $data1 = (string)(isset($_REQUEST['dataInicial'])? $_REQUEST['dataInicial']:'');
+        $data2 = (string)(isset($_REQUEST['dataFinal'])? $_REQUEST['dataFinal']:'');
+
+        $locacoes = $locacaoDao -> getLocacoesPorPeriodo($data1, $data2);
+
+        $_SESSION['locacoes'] = $locacoes;
 
         header("Location: ../views/locacoes/visualizacaoLocacoes.php");
     }
-?>
