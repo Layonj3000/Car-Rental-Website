@@ -90,6 +90,14 @@ class Veiculo {
         $this->valorBase = $valorBase;
     }
 
+    public function getValor() {
+        return $this->valorBase;
+    }
+
+    public function setValor($valor) {
+        $this->valorBase = $valor;
+    }
+
     public function getFotoReferencia()
     {
         return $this->fotoReferencia;

@@ -1,6 +1,7 @@
 <?php
     require_once "conexao.inc.php";
     require_once "../model/veiculo.inc.php";
+    require_once "categoriaDao.inc.php";
 
     class VeiculoDao{
         private $con;
@@ -122,6 +123,9 @@
             $veiculos = array();
 
             while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+                $categoriaDao = new CategoriaDao();
+                $valorCategoria = $categoriaDao->getValorCategoria($rs -> id_categoria);
+
                 $veiculo = new Veiculo();
                 $veiculo -> setPlaca($rs -> placa);
                 $veiculo -> setNome($rs -> nome);
@@ -130,6 +134,7 @@
                 $veiculo -> setOpcionais($rs -> opcionais);
                 $veiculo -> setMotorizacao($rs -> motorizacao);
                 $veiculo -> setValorBase($rs -> valorBase);
+                $veiculo -> setValor($rs -> valorBase + $valorCategoria);
                 $veiculo -> setFotoReferencia($rs -> fotoReferencia);
                 $veiculo -> setIdCategoria($rs -> id_categoria);
 
@@ -156,7 +161,6 @@
             $veiculo -> setMotorizacao($rs -> motorizacao);
             $veiculo -> setValorBase($rs -> valorBase);
             $veiculo -> setIdCategoria($rs -> id_categoria);
-
 
             return $veiculo;
         }
