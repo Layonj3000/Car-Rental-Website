@@ -28,6 +28,7 @@
     height: 3rem;
     border: 1px solid rgb(187, 184, 184);
     border-radius: 0.2rem;
+    transition: all 0.3s ease;
 }
 
 .form-padrao form{
@@ -82,12 +83,35 @@ input[type=number] {
 
 .form-padrao .botoes input[type="submit"]{
     background-color: #0D6EFD;
+    border: none;
+    border-radius: 0.3rem;
     color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.form-padrao .botoes input[type="submit"]:hover{
+    background-color: #0a58ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.form-padrao .botoes input[type="button"]:hover{
+    background-color: #e9e8e8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 .form-padrao #exclusao{
     background-color: red;
     color: white;
+    transition: all 0.3s ease;
+}
+
+.form-padrao #exclusao:hover{
+    background-color: #ee0202;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .form-padrao form label {

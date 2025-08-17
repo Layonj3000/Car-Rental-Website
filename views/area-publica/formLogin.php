@@ -13,20 +13,19 @@
         <input type="hidden" value="1" name="opcao">
         <?php
             if(isset($_GET['aviso']) && $_GET['aviso'] == 'acesso_negado') {
-                echo "<b><font color='red'>Acesso Negado. Esta página é restrita a administradores.</font></b>";
+                echo "<span class='mensagem-erro'>Acesso Negado. Esta página é restrita a administradores.</span>";
             }
             if(isset($_GET['aviso']) && $_GET['aviso'] == 'logado') {
-                echo "<b><font color='red'>Você precisa estar logado para acessar essa página.</font></b>";
+                echo "<span class='mensagem-erro'>Você precisa estar logado para acessar essa página.</span>";
             }
-            if(isset($_REQUEST["erro"]))
-            {
+            if(isset($_REQUEST["erro"])) {
                 $tipo = (int)$_REQUEST["erro"];
-                if($tipo == 1)
-                {
-                    echo "<b><font color='red'>Login Incorreto</font></b>";
+                if($tipo == 1) {
+                    echo "<span class='mensagem-erro'>Login Incorreto</span>";
                 }
             }
         ?>
+
     </form>
     <a href="../area-publica/formCadastroUsuario.php">Não possui uma conta? Cadastre-se aqui</a>
 </div>
