@@ -84,8 +84,14 @@ CREATE TABLE `socios` (
   `rg` varchar(12) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `email` varchar(15) NOT NULL
+  `email` varchar(15) NOT NULL,
+  `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Dumping data for table `socios`
+INSERT INTO socios (cpf, nome, rg, endereco, telefone, email, id_usuario) VALUES 
+('12345678901', 'Maria Oliveira', 'MG1234567', 'Rua das Flores, 120 - BH', '31988776655', 'maria@email.com', 1),
+('98765432100', 'João Silva', 'SP9876543', 'Av. Paulista, 2000 - SP', '11977665544', 'joao@email.com', 2);
 
 -- --------------------------------------------------------
 
