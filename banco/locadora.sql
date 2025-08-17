@@ -83,7 +83,8 @@ CREATE TABLE `socios` (
   `rg` varchar(12) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `telefone` varchar(12) NOT NULL,
-  `email` varchar(15) NOT NULL
+  `email` varchar(15) NOT NULL,
+  `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
