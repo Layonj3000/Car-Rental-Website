@@ -7,10 +7,11 @@ class Veiculo {
     private $opcionais;
     private $motorizacao;
     private $valorBase;
+    private $fotoReferencia;
     private $id_categoria;
 
 
-    public function setVeiculoComPlaca($placa, $nome, $anoFabricacao, $fabricante, $opcionais, $motorizacao, $valorBase, $id_categoria) {
+    public function setVeiculoComPlaca($placa, $nome, $anoFabricacao, $fabricante, $opcionais, $motorizacao, $valorBase, $fotoReferencia, $id_categoria) {
         $this->placa = $placa;
         $this->nome = $nome;
         $this->anoFabricacao = $anoFabricacao;
@@ -18,16 +19,18 @@ class Veiculo {
         $this->opcionais = $opcionais;
         $this->motorizacao = $motorizacao;
         $this->valorBase = $valorBase;
+        $this->fotoReferencia = $fotoReferencia;
         $this->id_categoria = $id_categoria;
     }
 
-    public function setVeiculo($nome, $anoFabricacao, $fabricante, $opcionais, $motorizacao, $valorBase, $id_categoria) {
+    public function setVeiculo($nome, $anoFabricacao, $fabricante, $opcionais, $motorizacao, $valorBase, $fotoReferencia, $id_categoria) {
         $this->nome = $nome;
         $this->anoFabricacao = $anoFabricacao;
         $this->fabricante = $fabricante;
         $this->opcionais = $opcionais;
         $this->motorizacao = $motorizacao;
         $this->valorBase = $valorBase;
+        $this->fotoReferencia = $fotoReferencia;
         $this->id_categoria = $id_categoria;
     }
 
@@ -85,6 +88,16 @@ class Veiculo {
 
     public function setValorBase($valorBase) {
         $this->valorBase = $valorBase;
+    }
+
+    public function getFotoReferencia()
+    {
+        return $this->fotoReferencia;
+    }
+
+    public function setFotoReferencia($fotoReferencia)
+    {
+        $this->fotoReferencia = $fotoReferencia;
     }
 
     public function getIdCategoria() {

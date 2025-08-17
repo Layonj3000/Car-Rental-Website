@@ -7,27 +7,29 @@ $veiculos = $_SESSION['veiculos'];
 <div class="showroom-container">
     <h1 class="showroom-title">Show Room de veículos</h1>
 
-    <div class="vehicles-grid">
-        <?php
-        foreach ($veiculos as $veiculo) {
-            ?>
-            <div class="vehicle-card">
-                <div class="vehicle-image">
-                    <img src="imagens/veiculos/<?= $veiculo->getPlaca() ?>.jpg" alt="<?= $veiculo->getNome() ?>">
-                </div>
-                <div class="vehicle-info">
-                    <h5 class="vehicle-name"><?= $veiculo->getNome() ?></h5>
-                    <p class="vehicle-year"><?= $veiculo->getAno() ?></p>
-                    <h6 class="vehicle-brand">Marca: <?= $veiculo->getFabricante() ?></h6>
-                    <h4 class="vehicle-price">R$ <?= number_format($veiculo->getValorBase(), '2', ',', '.') ?></h4>
-                    <div class="vehicle-action">
-                        <a href="../controlers/controlerCarrinho.php?opcao=1&id=<?= $veiculo->getPlaca() ?>" class="btn-comprar">Comprar</a>
+    <div class="veiculos-grid-wrapper">
+        <div class="veiculos-grid">
+            <?php
+            foreach ($veiculos as $veiculo) {
+                ?>
+                <div class="veiculo-card">
+                    <div class="veiculo-image">
+                        <img src="../../uploads/<?= $veiculo->getFotoReferencia() ?>" alt="<?= $veiculo->getNome() ?>">
+                    </div>
+                    <div class="veiculo-info">
+                        <h5 class="veiculo-name"><?= $veiculo->getNome() ?></h5>
+                        <p class="veiculo-year"><?= $veiculo->getAnoFabricacao() ?></p>
+                        <h6 class="veiculo-brand">Marca: <?= $veiculo->getFabricante() ?></h6>
+                        <h4 class="veiculo-price">R$ <?= number_format($veiculo->getValorBase(), '2', ',', '.') ?></h4>
+                        <div class="veiculo-action">
+                            <a href="../../controlers/controlerVeiculo.php?opcao=1&id=<?= $veiculo->getPlaca() ?>" class="btn-comprar">Reservar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php
-        }
-        ?>
+                <?php
+            }
+            ?>
+        </div>
     </div>
 </div>
 

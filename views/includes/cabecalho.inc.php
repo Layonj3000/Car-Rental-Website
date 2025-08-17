@@ -27,7 +27,7 @@
 
         <ul class="menu-principal">
             <li><a href="../../views/area-publica/index.php">Home</a></li>
-            <li><a href="../../views/area-publica/showRoom.php">Veículos</a></li>
+            <li><a href="../../controlers/controlerVeiculo.php?opcao=6">Veículos</a></li>
             <li class="area-administrativa tem-submenu">
                 <a href="#">Área Admnistrativa</a>
                 <ul class="submenu-lista">

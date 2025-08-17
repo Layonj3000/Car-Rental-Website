@@ -10,14 +10,20 @@
     color: #333;
 }
 
-.vehicles-grid {
+.veiculos-grid-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.veiculos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.vehicle-card {
+.veiculo-card {
     background: white;
     border: 1px solid #dee2e6;
     border-radius: 0.375rem;
@@ -28,49 +34,49 @@
     flex-direction: column;
 }
 
-.vehicle-card:hover {
+.veiculo-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
-.vehicle-image {
+.veiculo-image {
     width: 100%;
     height: 200px;
     overflow: hidden;
 }
 
-.vehicle-image img {
+.veiculo-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.vehicle-card:hover .vehicle-image img {
+.veiculo-card:hover .veiculo-image img {
     transform: scale(1.05);
 }
 
-.vehicle-info {
+.veiculo-info {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.vehicle-name {
+.veiculo-name {
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: #333;
 }
 
-.vehicle-year {
+.veiculo-year {
     color: #6c757d;
     margin-bottom: 0.5rem;
     font-size: 0.875rem;
 }
 
-.vehicle-brand {
+.veiculo-brand {
     text-align: right;
     font-size: 1rem;
     font-weight: 500;
@@ -78,20 +84,20 @@
     margin-bottom: 1rem;
 }
 
-.vehicle-price {
+.veiculo-price {
     font-size: 1.5rem;
     font-weight: bold;
     color: #28a745;
     margin-bottom: 1rem;
 }
 
-.vehicle-action {
+.veiculo-action {
     text-align: right;
     margin-top: auto;
 }
 
 .btn-comprar {
-    background-color: #dc3545;
+    background-color: #33cc33;
     color: white;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -104,14 +110,14 @@
 }
 
 .btn-comprar:hover {
-    background-color: #c82333;
+    background-color: #61d461;
     color: white;
     text-decoration: none;
 }
 
 .btn-comprar:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(51, 204, 51, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -124,7 +130,7 @@
         font-size: 2rem;
     }
 
-    .vehicle-info {
+    .veiculo-info {
         padding: 0.75rem;
     }
 }
