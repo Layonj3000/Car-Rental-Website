@@ -80,10 +80,9 @@ if($opcao == 4) {
 }
 
 if($opcao == 5){ //finalizar compra
+    session_start();
     if(isset($_SESSION["usuario"])){
         $total = (float) $_REQUEST['total'];
-
-        session_start();
 
         $_SESSION['total'] = $total;
 
