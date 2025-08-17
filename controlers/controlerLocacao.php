@@ -1,5 +1,7 @@
 <?php
     include_once "../dao/locacaoDao.inc.php";
+    include_once "../dao/socioDAO.inc.php";
+    include_once "../model/socio.inc.php";
     include_once "../utils/funcoesUteis.php";
     session_start();
 
@@ -32,5 +34,20 @@
         }
 
         header("Location: ../views/locacoes/visualizacaoLocacoes.php");
+    }
+
+    if($op == 3){
+        $socio = new Socio();
+        $socioDao = new SocioDao();
+
+        $usuario = $_SESSION["usuario"];
+        $usuario_id = $usuario -> id;
+
+        $socio = $socioDao -> getSocioByIdUsuario($usuario_id);
+        $locacoes = $dao -> getLocacoesPorSocio($socio -> getCpf());
+
+         $_SESSION['locacoes'] = $locacoes;
+
+        header("Location: ../views/locacoes/visualizacaoLocacoesPorCliente.php");
     }
 ?>

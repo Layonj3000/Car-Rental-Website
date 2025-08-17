@@ -10,7 +10,7 @@
         <input type="text" placeholder="Usuário" name="pUser" required><br><br>
         <input type="password" placeholder="Senha" name="pSenha" required><br><br>
         <input type="submit" value="EFETUAR LOGIN"><br><br>
-        <input type="hidden" value="1" name="pOpcao">
+        <input type="hidden" value="1" name="opcao">
         <?php
             if(isset($_GET['aviso']) && $_GET['aviso'] == 'acesso_negado') {
                 echo "<b><font color='red'>Acesso Negado. Esta página é restrita a administradores.</font></b>";
@@ -25,7 +25,7 @@
             }
         ?>
     </form>
-    <a href="#">Não possui uma conta? Cadastre-se aqui</a>
+    <a href="../area-publica/formCadastroUsuario.php">Não possui uma conta? Cadastre-se aqui</a>
 </div>
 
 <?php require_once "../includes/rodape.inc.php"; ?>

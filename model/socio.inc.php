@@ -6,22 +6,33 @@ class Socio {
     private $endereco;
     private $telefone;
     private $email;
+    private $id_usuario;
 
-    public function setSocioComCpf($cpf, $nome, $rg, $endereco, $telefone, $email){
+    public function setSocioComCpf($cpf, $nome, $rg, $endereco, $telefone, $email, $id_usuario){
         $this -> cpf = $cpf;
         $this -> nome = $nome;
         $this -> rg = $rg;
         $this -> endereco = $endereco;
         $this -> telefone = $telefone;
         $this -> email = $email;
+        $this->id_usuario = $id_usuario;
     }
 
-    public function setSocio($nome, $rg, $endereco, $telefone, $email){
+    public function setSocio($nome, $rg, $endereco, $telefone, $email, $id_usuario){
         $this -> nome = $nome;
         $this -> rg = $rg;
         $this -> endereco = $endereco;
         $this -> telefone = $telefone;
         $this -> email = $email;
+        $this->id_usuario = $id_usuario;
+    }
+
+    public function getIdUsuario() {
+        return $this->id_usuario;
+    }
+
+    public function setIdUsuario($id_usuario) {
+        $this->id_usuario = $id_usuario;
     }
 
     public function getCpf() {

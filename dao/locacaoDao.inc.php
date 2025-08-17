@@ -64,6 +64,26 @@ class LocacaoDao{
         return $locacoes;
     }
 
+    public function getLocacoesPorSocio($cpf){
+        $sql = $this -> con -> prepare("select * from locacao where cpf_socio = :cpf");
+
+        $sql -> bindValue(":cpf", $cpf);
+
+        $sql -> execute();
+
+        $locacoes = array();
+
+        while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
+            $locacao = new Locacao();
+
+            $locacao -> setLocacaoComId($rs -> id_locacao, $rs -> data, $rs -> valor_total, $rs -> cpf_socio, $rs -> id_veiculo);
+
+            $locacoes[] = $locacao;
+        }
+
+        return $locacoes;
+    }
+
     public function getLocacoesPorPeriodo($data1, $data2){
         $sql = "select * from locacao";
         $where_clauses = [];

@@ -57,6 +57,8 @@
 .form-padrao input[type="number"],
 .form-padrao input[type="email"],
 .form-padrao input[type="date"],
+.form-padrao input[type="tel"],
+.form-padrao input[type="password"],
 .form-padrao select{ 
     width: 100%;
 }
@@ -67,12 +69,12 @@
     font-weight: 500;
 }
 
-.form-padrao input[type="submit"]{
+.form-padrao .botoes input[type="submit"]{
     background-color: #0D6EFD;
     color: white;
 }
 
-.form-padrao input[type="button"]{
+.form-padrao #exclusao{
     background-color: red;
     color: white;
 }

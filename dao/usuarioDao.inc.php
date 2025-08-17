@@ -39,20 +39,32 @@
         }
 
         public function atualizarUsuario(Usuario $usuario){
-            $sql = $this -> con -> prepare("update usuarios set senha = :senha where user = :user");
+            $sql = $this -> con -> prepare("update usuarios 
+                                    set user = :user, senha = :senha, tipo_usuario = :tipo_usuario
+                                    where id = :id");
 
+            $sql -> bindValue(":id", $usuario -> getId());
             $sql -> bindValue(":user", $usuario -> getUser());
             $sql -> bindValue(":senha", $usuario -> getSenha());
+            $sql -> bindValue(":tipo_usuario", $usuario -> getTipoUsuario());
 
             $sql -> execute();
         }
 
-        public function excluirUsuario($user){
-            $sql = $this -> con -> prepare("delete from usuarios where user = :user");
+        public function excluirUsuario($id){
+            $sql = $this -> con -> prepare("delete from usuarios where id = :id");
             
-            $sql -> bindValue(":user", $user);
+            $sql -> bindValue(":id", $id);
 
             $sql -> execute();
+        }
+
+        public function ultimoUsuarioInserido(){
+            $sql = $this -> con -> query("select MAX(id) as id from usuarios");
+
+            $idMax = $sql -> fetch(PDO::FETCH_OBJ) -> id;
+
+            return $idMax;
         }
     }
 

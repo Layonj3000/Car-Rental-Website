@@ -36,13 +36,14 @@
                     <li><a href="../../views/categorias/formIncluirCategoria.php">Cadastrar Categoria</a></li>
                     <li><a href="../../controlers/controlerCategoria.php?opcao=2">Consultar Categoria</a></li>
                     <li><a href="../../controlers/controlerLocacao.php?opcao=2">Consultar Locações</a></li>
+                    <li><a href="../../controlers/controlerSocio.php?opcao=2">Consultar Sócio</a></li>
                 </ul>
             </li>
             <li class="clientes tem-submenu">
                 <a href="#">Clientes</a>
                 <ul class="submenu-lista">
-                    <li><a href="#">Cadastrar</a></li>
-                    <li><a href="#">Seus Dados</a></li>
+                    <li><a href="../../controlers/controlerUsuario.php?opcao=3">Seus Dados</a></li>
+                    <li><a href="../../controlers/controlerLocacao.php?opcao=3">Histórico De Locações</a></li>
                 </ul>
             </li>
             <li><a href="../../views/area-publica/fale-conosco.php">Contato</a></li>
@@ -56,7 +57,7 @@
                 }
                 else{
             ?>
-                    <li class="btn-sair"><a href="../../controlers/controlerUsuario.php?pOpcao=2"><button>Sair</button></a></li>
+                    <li class="btn-sair"><a href="../../controlers/controlerUsuario.php?opcao=2"><button>Sair</button></a></li>
             <?php
                 }
             ?>
