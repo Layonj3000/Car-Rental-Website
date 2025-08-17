@@ -4,6 +4,11 @@
 
     $usuario = $_SESSION["usuario"];
     $socio = $_SESSION["socio"];
+
+    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']->tipo_usuario !== 'comum') {
+        header("Location: ../area-publica/formLogin.php?aviso=logado");
+        exit;
+    }
 ?>
 
 <div class="form-padrao">

@@ -17,7 +17,7 @@
         {
             session_start();
             $_SESSION["usuario"] = $usuario;
-            header("Location: ../views/veiculos/visualizacaoVeiculos.php");
+            header("Location: ../views/area-publica/index.php");
         }
         else {
             header("Location: ../views/area-publica/formLogin.php?erro=1");

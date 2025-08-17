@@ -3,6 +3,10 @@
     include_once "../../utils/funcoesUteis.php";
     include_once "../includes/cabecalho.inc.php";
     $locacoes = $_SESSION['locacoes'];
+    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']->tipo_usuario !== 'comum') {
+        header("Location: ../area-publica/formLogin.php?aviso=logado");
+        exit;
+    }
 ?>
 
 <main>
