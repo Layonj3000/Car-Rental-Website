@@ -32,11 +32,9 @@ if($opcao == 1){ //incluir no carrinho
     $key = array_search2($exemplar->getVeiculo()->getPlaca(), $carrinho);
 
     if($key != -1){
-        error_log("Entrou no item existente: " . print_r($carrinho, true), 3, "debug.log");
         $carrinho[$key]->setDias();
         $carrinho[$key]->setValorExemplar();
     } else{
-        error_log("Caiu no else do item existente" . print_r($carrinho, true), 3, "debug.log");
         $carrinho[] = $exemplar;
     }
 

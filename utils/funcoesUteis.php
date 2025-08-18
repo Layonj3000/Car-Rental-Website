@@ -27,8 +27,6 @@ function salvarFoto($files)
         return null;
     }
 
-    error_log("passou do primeiro if: " . print_r($files['foto']['tmp_name'], true), 3, "debug.log");
-
     $fileName = $files['foto']['name'];
     $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
 

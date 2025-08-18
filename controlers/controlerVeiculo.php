@@ -11,8 +11,6 @@
 
         $fotoReferencia = salvarFoto($_FILES);
 
-        error_log("fotoReferencia: " . print_r($fotoReferencia, true), 3, "debug.log");
-
         $veiculo -> setVeiculoComPlaca($_REQUEST['placa'], $_REQUEST['nomeVeiculo'], $_REQUEST['anoFabricacao'], $_REQUEST['fabricante'], $_REQUEST['opcionais'], $_REQUEST['motorizacao'], $_REQUEST['valorBase'], $fotoReferencia, $_REQUEST['idCategoria']);
     
         $veiculoDao -> incluirVeiculo($veiculo);
