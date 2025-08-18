@@ -30,17 +30,19 @@ section {
 
 .container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 30px auto;
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-.container img.img-fluid {
+.banner-image {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    max-height: 180px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
 }
 
 .container p {
@@ -115,5 +117,10 @@ footer {
 
     .container {
         padding: 20px;
+    }
+    
+    .banner-image {
+        max-height: 120px;
+        object-position: 50% 50%;
     }
 }
