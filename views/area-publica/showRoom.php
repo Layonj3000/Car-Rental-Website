@@ -1,12 +1,39 @@
 <?php
-include_once '../../model/veiculo.inc.php';
-include_once '../includes/cabecalho.inc.php';
-$veiculos = $_SESSION['veiculos'];
+    include_once '../../model/veiculo.inc.php';
+    include_once '../includes/cabecalho.inc.php';
+    $veiculos = $_SESSION['veiculos'];
 ?>
 
-<div class="showroom-container">
-    <h1 class="showroom-title">Show Room de veículos</h1>
+    <div class="form-padrao">
 
+        <form action="../../controlers/controlerVeiculo.php">
+            <div class="padrao">
+                <label for="placa">Placa:</label>
+                <input type="text" name="placa">
+            </div>
+        
+            <div class="padrao">
+                <label for="nomeVeiculo">Nome:</label>
+                <input type="text" name="nomeVeiculo">
+            </div>
+
+            <div class="padrao">
+                <label for="fabricante">Fabricante:</label>
+                <input type="text" name="fabricante">
+            </div>
+        
+            <div class="padrao">
+                <label for="motorizacao">Motorizacao:</label>
+                <input type="text" name="motorizacao">
+            </div>
+
+            <input type="hidden" name="opcao" value="7">
+
+            <div class="botoes">
+                <input type="submit" value="Buscar">
+            </div>
+        </form>
+    </div>
     <div class="veiculos-grid-wrapper">
         <div class="veiculos-grid">
             <?php
