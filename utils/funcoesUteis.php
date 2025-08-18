@@ -1,13 +1,11 @@
 <?php
 
-function formatarData($data)
-{
-    $timestamp = strtotime($data);
-    return date('d/m/Y', $timestamp);
+function formatarData($data){
+    return date('d/m/Y',$data);
 }
 
 function converteDataMySql($data){
-        return date('Y-m-d', $data);
+    return date('Y-m-d', $data);
 }
 
 function salvarFoto($files)
