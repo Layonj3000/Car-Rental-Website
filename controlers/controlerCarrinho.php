@@ -33,7 +33,6 @@ if($opcao == 1){ //incluir no carrinho
 
     if($key != -1){
         error_log("Entrou no item existente: " . print_r($carrinho, true), 3, "debug.log");
-        $carrinho[$key]->setLocado();
         $carrinho[$key]->setDias();
         $carrinho[$key]->setValorExemplar();
     } else{
