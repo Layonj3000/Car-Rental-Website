@@ -2,9 +2,6 @@
 require_once '../../model/veiculo.inc.php';
 require_once '../../model/exemplar.inc.php';
 require_once '../includes/cabecalho.inc.php';
-
-$carrinho = $_SESSION['carrinho'];
-
 ?>
 <link rel="stylesheet" href="estilos-carrinho.css">
 
@@ -15,6 +12,7 @@ $carrinho = $_SESSION['carrinho'];
     if (isset($_REQUEST['status'])) {
         require_once "../includes/carrinhoVazio.inc.php";
     } else {
+        $carrinho = $_SESSION['carrinho'];
         ?>
         <div class="tabela-responsiva">
             <table class="tabela-carrinho">
