@@ -68,6 +68,8 @@
         </form> 
 </div> 
 
+<?php require_once "../includes/rodape.inc.php"; ?>
+
 <script>
 function setOpcao(valor) {
     document.querySelector('input[name="opcao"]').value = valor;

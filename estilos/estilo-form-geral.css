@@ -51,7 +51,6 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    /* margin: 2rem auto; */
 }
 
 .form-padrao input[type="text"],
@@ -72,7 +71,7 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-    -moz-appearance:textfield;
+    appearance: textfield;
 }
 
 .form-padrao input[type="submit"],

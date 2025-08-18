@@ -29,6 +29,8 @@
     </form>
 </div>
 
+<?php require_once "../includes/rodape.inc.php"; ?>
+
 <script>
     function cancelar(){
         window.location.href = "visualizacaoCategorias.php";
