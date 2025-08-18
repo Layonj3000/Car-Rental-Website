@@ -9,13 +9,17 @@ class Exemplar {
     private $locado;
     private $dias;
     private $valorExemplar;
+    private $placa_veiculo;
 
-    function __construct($veiculo, $valorExemplar) {
-        $this -> veiculo = $veiculo;
-        $this -> locado = 1;
-        $this -> dias = 1;
-        $this -> valorExemplar = $valorExemplar;
+    function __construct($veiculo = null, $valorExemplar = null) {
+    if ($veiculo !== null && $valorExemplar !== null) {
+        $this->veiculo = $veiculo;
+        $this->locado = 1;
+        $this->dias = 1;
+        $this->valorExemplar = $valorExemplar;
     }
+}
+
 
     public function setExemplarComId($id_exemplar, $placa_veiculo, $id_locacao, $locado){
         $this -> id_exemplar = $id_exemplar;
