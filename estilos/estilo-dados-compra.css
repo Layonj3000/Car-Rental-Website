@@ -1,0 +1,238 @@
+.container-dados-compra {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.dados-cliente {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-cliente {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.rotulo-cliente {
+    font-weight: bold;
+    color: #495057;
+}
+
+.divisor-secoes {
+    border: none;
+    border-top: 2px solid #dee2e6;
+    margin: 20px 0;
+}
+
+.container-tabela-locacao {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.tabela-locacao {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cabecalho-locacao {
+    background-color: #198754;
+    color: white;
+}
+
+.linha-cabecalho-locacao {
+    vertical-align: middle;
+}
+
+.linha-cabecalho-locacao th {
+    text-align: center;
+    padding: 15px 10px;
+    font-weight: bold;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.linha-cabecalho-locacao th:last-child {
+    border-right: none;
+}
+
+.coluna-item {
+    width: 10%;
+}
+
+.corpo-tabela-locacao {
+    border-top: 2px solid #dee2e6;
+}
+
+.linha-item-locacao {
+    vertical-align: middle;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.linha-item-locacao:hover {
+    background-color: #f8f9fa;
+}
+
+.linha-item-locacao td {
+    text-align: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+
+.linha-item-locacao td:last-child {
+    border-right: none;
+}
+
+.celula-imagem {
+    padding: 10px;
+}
+
+.imagem-veiculo {
+    width: 100px;
+    height: 100px;
+    border: 0;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.celula-placa-veiculo,
+.celula-nome-item,
+.celula-fabricante-item,
+.celula-preco-item,
+.celula-dias-item,
+.celula-valor-item {
+    font-size: 14px;
+    color: #495057;
+}
+
+.celula-preco-item,
+.celula-valor-item {
+    font-weight: 600;
+    color: #198754;
+}
+
+.linha-total-locacao {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.celula-total-geral {
+    text-align: right;
+    padding: 20px;
+    border-top: 2px solid #dee2e6;
+    border-bottom: none;
+    border-right: none;
+}
+
+.texto-total-geral {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.container-botao-pagamento {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.linha-botao-pagamento {
+    display: flex;
+    justify-content: center;
+}
+
+.coluna-botao-pagamento {
+    flex: 0 1 auto;
+}
+
+.botao-efetuar-pagamento {
+    background-color: #198754;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    display: inline-block;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.botao-efetuar-pagamento:hover {
+    background-color: #157347;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+    .container-dados-compra {
+        padding: 10px;
+    }
+
+    .dados-cliente {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .tabela-locacao {
+        font-size: 12px;
+    }
+
+    .linha-cabecalho-locacao th,
+    .linha-item-locacao td {
+        padding: 8px 5px;
+    }
+
+    .imagem-veiculo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .texto-total-geral {
+        font-size: 14px;
+    }
+
+    .botao-efetuar-pagamento {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-secao {
+        font-size: 1.5rem;
+    }
+
+    .dados-cliente {
+        font-size: 0.9rem;
+    }
+
+    .tabela-locacao {
+        font-size: 10px;
+    }
+
+    .imagem-veiculo {
+        width: 50px;
+        height: 50px;
+    }
+}

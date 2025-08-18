@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../estilos/estilo-fale-conosco.css">
     <link rel="stylesheet" href="../../estilos/estilo-contato-sucesso.css">
     <link rel="stylesheet" href="../../estilos/estilo-carrinho.css">
+    <link rel="stylesheet" href="../../estilos/estilo-dados-compra.css">
 
 </head>
 <body>

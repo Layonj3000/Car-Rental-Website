@@ -112,6 +112,7 @@
                 $veiculo -> setValorBase($rs -> valorBase);
                 $veiculo -> setValor($rs -> valorBase + $valorCategoria);
                 $veiculo -> setIdCategoria($rs -> id_categoria);
+                $veiculo -> setFotoReferencia($rs -> fotoReferencia);
 
                 $veiculos[] = $veiculo;
             }
@@ -172,6 +173,7 @@
             $veiculo->setValorBase($rs->valorBase);
             $veiculo->setValor($rs->valorBase + $valorCategoria);
             $veiculo->setIdCategoria($rs->id_categoria);
+            $veiculo->setFotoReferencia($rs -> fotoReferencia);
 
             return $veiculo;
         }
