@@ -15,8 +15,12 @@
 
         if($usuario != NULL)
         {
+            $socioDao = new SocioDao();
+            $socio = $socioDao->getSocioByIdUsuario((int)$usuario->id);
+
             session_start();
             $_SESSION["usuario"] = $usuario;
+            $_SESSION["socio"] = $socio;
             header("Location: ../views/area-publica/index.php");
         }
         else {
@@ -29,6 +33,7 @@
     {
         session_start();
         unset($_SESSION['usuario']);
+        unset($_SESSION['socio']);
         header("Location: ../views/area-publica/formLogin.php");
     }
 
