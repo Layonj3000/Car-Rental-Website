@@ -1,0 +1,119 @@
+.btn-sair-custom {
+  background-color: transparent;
+  border: 1px solid #dc3545; 
+  color: #dc3545;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-sair-custom:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-custom {
+  display: none; 
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0; 
+  transition: opacity 0.2s ease-in-out;
+}
+
+.modal-dialogo {
+  background-color: #fff;
+  position: relative;
+  margin: 10% auto;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  transform: translateY(-50px); 
+  transition: transform 0.3s ease-out;
+}
+
+.modal-custom.mostrar {
+  display: block;
+  opacity: 1;
+}
+
+.modal-custom.mostrar .modal-dialogo {
+  transform: translateY(0);
+}
+
+.modal-cabecalho, .modal-corpo, .modal-rodape {
+  padding: 1rem;
+}
+
+.modal-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6; 
+}
+
+.modal-titulo {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.btn-fechar {
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.btn-fechar:hover {
+  opacity: 1;
+}
+
+.modal-corpo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.modal-rodape {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem; 
+  border-top: 1px solid #dee2e6;
+}
+
+.modal-rodape .btn-cancelar, .modal-rodape .btn-confirmar {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none; 
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-cancelar {
+  background-color: #6c757d; 
+  color: white;
+}
+.btn-cancelar:hover {
+  background-color: #5a6268;
+}
+
+.btn-confirmar {
+  background-color: #0d6efd; 
+  color: white;
+}
+.btn-confirmar:hover {
+  background-color: #0b5ed7;
+}

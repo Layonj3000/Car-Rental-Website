@@ -5,7 +5,9 @@
 <?php
     } else {
 ?>
-        <li class="btn-sair"><a href="../../controlers/controlerUsuarioSocio.php?opcao=2"><button>Sair</button></a></li>
+        <li class="btn-sair">
+            <button type="button" class="btn-sair-custom" id="abrirModal">Sair</button>
+        </li>
 <?php
     }
 ?>
