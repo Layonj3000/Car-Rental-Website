@@ -9,7 +9,7 @@
         <form action="../../controlers/controlerUsuarioSocio.php">
             <div class="padrao">
                 <label for="user">User:</label>
-                <input type="text" name="user" required>
+                <input type="email" name="user" required>
             </div>
 
             <div class="padrao">
@@ -33,10 +33,24 @@
             </div>
         
             <div class="padrao">
-                <label for="endereco">Endereco:</label>
-                <input type="text" name="endereco" required>
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" name="logradouro">
             </div>
 
+            <div class="padrao">
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade">
+            </div>
+
+            <div class="padrao">
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado">
+            </div>
+
+            <div class="padrao">
+                <label for="cep">Cep:</label>
+                <input type="text" name="cep">
+            </div>
             <div class="padrao">
                 <label for="telefone">Telefone:</label>
                 <input type="tel" name="telefone" required>

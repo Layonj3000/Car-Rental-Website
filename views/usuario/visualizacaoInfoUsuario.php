@@ -41,8 +41,23 @@
             </div>
         
             <div class="padrao">
-                <label for="endereco">Endereco:</label>
-                <input type="text" name="endereco" value="<?=$socio -> getEndereco()?>">
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" name="logradouro" value="<?=$socio -> getLogradouro()?>">
+            </div>
+
+            <div class="padrao">
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" value="<?=$socio -> getCidade()?>">
+            </div>
+
+            <div class="padrao">
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado" value="<?=$socio -> getEstado()?>">
+            </div>
+
+            <div class="padrao">
+                <label for="cep">Cep:</label>
+                <input type="text" name="cep" value="<?=$socio -> getCep()?>">
             </div>
 
             <div class="padrao">

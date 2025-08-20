@@ -21,7 +21,11 @@
                     <th>Cpf</th>
                     <th>Nome</th>
                     <th>Rg</th>
-                    <th>Endereco</th>
+                    <!-- <th>Endereco</th> -->
+                    <th>Logradouro</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Cep</th>
                     <th>Telefone</th>
                     <th>E-mail</th>
                 </tr>
@@ -33,7 +37,11 @@
                         echo "<td>" . $socio -> getCpf() . "</td>";
                         echo "<td>" . $socio -> getNome() . "</td>";
                         echo "<td>" . $socio -> getRg() . "</td>";
-                        echo "<td>" . $socio -> getEndereco() . "</td>";
+                        // echo "<td>" . $socio -> getEndereco() . "</td>";
+                        echo "<td>" . $socio -> getLogradouro() . "</td>";
+                        echo "<td>" . $socio -> getCidade() . "</td>";
+                        echo "<td>" . $socio -> getEstado() . "</td>";
+                        echo "<td>" . $socio -> getCep() . "</td>";
                         echo "<td>" . $socio -> getTelefone() . "</td>";
                         echo "<td>" . $socio -> getEmail() . "</td>";
                         echo "</tr>";

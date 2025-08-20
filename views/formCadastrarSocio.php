@@ -21,9 +21,29 @@
         <input type="text" name="rg">
     </div>
     
-    <div class="padrao">
+    <!-- <div class="padrao">
         <label for="endereco">Endereço:</label>
         <input type="text" name="endereco">
+    </div> -->
+
+    <div class="padrao">
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" name="logradouro">
+    </div>
+
+    <div class="padrao">
+        <label for="cidade">Cidade:</label>
+        <input type="text" name="cidade">
+    </div>
+
+    <div class="padrao">
+        <label for="estado">Estado:</label>
+        <input type="text" name="estado">
+    </div>
+
+    <div class="padrao">
+        <label for="cep">Cep:</label>
+        <input type="text" name="cep">
     </div>
 
     <div class="padrao">

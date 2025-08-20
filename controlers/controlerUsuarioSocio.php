@@ -62,7 +62,7 @@
         $socioDao = new SocioDao();
 
         $usuario -> setUsuarioComId($_REQUEST['id_usuario'], $_REQUEST['user'], $_REQUEST['senha'], $_REQUEST['tipo_usuario']);
-        $socio -> setSocioComCpf($_REQUEST['cpf'], $_REQUEST['nome'], $_REQUEST['rg'], $_REQUEST['endereco'], $_REQUEST['telefone'], $_REQUEST['email'], $_REQUEST['id_usuario']);
+        $socio -> setSocioComCpf($_REQUEST['cpf'], $_REQUEST['nome'], $_REQUEST['rg'], $_REQUEST['logradouro'], $_REQUEST['cidade'], $_REQUEST['estado'], $_REQUEST['cep'], $_REQUEST['telefone'], $_REQUEST['email'], $_REQUEST['id_usuario']);
 
 
         //var_dump($usuario);
@@ -98,7 +98,7 @@
         $usuarioDao -> inserirUsuario($usuario);
 
 
-        $socio -> setSocioComCpf($_REQUEST['cpf'], $_REQUEST['nome'], $_REQUEST['rg'], $_REQUEST['endereco'], $_REQUEST['telefone'], $_REQUEST['email'], $usuarioDao -> ultimoUsuarioInserido());
+        $socio -> setSocioComCpf($_REQUEST['cpf'], $_REQUEST['nome'], $_REQUEST['rg'], $_REQUEST['logradouro'], $_REQUEST['cidade'], $_REQUEST['estado'], $_REQUEST['cep'], $_REQUEST['telefone'], $_REQUEST['email'], $usuarioDao -> ultimoUsuarioInserido());
 
         $socioDao -> incluirSocio($socio);
 
