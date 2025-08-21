@@ -13,13 +13,14 @@ class ExemplarDao{
     }
 
     public function incluirExemplar(Exemplar $exemplar){
-        $sql = $this -> con -> prepare("insert into exemplares (id_exemplar, placa_veiculo, id_locacao, locado)
-                                                         values(:id_exemplar, :placa_veiculo, :id_locacao, :locado)");
+        $sql = $this -> con -> prepare("insert into exemplares (id_exemplar, placa_veiculo, id_locacao, locado, dias)
+                                                         values(:id_exemplar, :placa_veiculo, :id_locacao, :locado, :dias)");
         $sql -> bindValue(":id_exemplar", $exemplar -> getIdExemplar());
         $sql -> bindValue(":placa_veiculo", $exemplar -> getPlacaVeiculo());
         $sql -> bindValue(":id_locacao", $exemplar -> getIdLocacao());
         $sql -> bindValue(":locado", $exemplar -> getLocado());
-        
+        $sql -> bindValue(":dias", $exemplar -> getDias());
+
         $sql -> execute();
     }
 

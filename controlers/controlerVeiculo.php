@@ -72,7 +72,7 @@
     if($opcao == 6){/*selecionar todos*/
         $veiculoDao = new VeiculoDao();
 
-        $veiculos = $veiculoDao->getVeiculosComImagem();
+        $veiculos = $veiculoDao->getVeiculos('', '', '', '');
 
         session_start();
 

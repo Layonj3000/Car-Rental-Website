@@ -11,6 +11,9 @@ if($opcao == 1){ //incluir no carrinho
 
     $veiculoDao = new VeiculoDao();
     $veiculo = $veiculoDao->getVeiculoByPlaca($placa);
+    $disponibilidade = $veiculoDao->getDisponibilidadeVeiculo($placa);
+
+    $veiculo->setDisponivel($disponibilidade);
 
     if($veiculo === null) {
         header("Location: ../views/area-publica/showRoom.php?erro=veiculo_nao_encontrado");

@@ -21,18 +21,20 @@ class Exemplar {
 }
 
 
-    public function setExemplarComId($id_exemplar, $placa_veiculo, $id_locacao, $locado){
+    public function setExemplarComId($id_exemplar, $placa_veiculo, $id_locacao, $locado, $dias){
         $this -> id_exemplar = $id_exemplar;
         $this -> placa_veiculo = $placa_veiculo;
         $this -> id_locacao = $id_locacao;
         $this -> locado = $locado;
+        $this -> dias = $dias;
     }
 
-    public function setExemplar($placa_veiculo, $id_locacao, $locado){
+    public function setExemplar($placa_veiculo, $id_locacao, $locado, $dias){
         $this -> placa_veiculo = $placa_veiculo;
         $this -> id_locacao = $id_locacao;
         $this -> locado = $locado;
-    }    
+        $this -> dias = $dias;
+    }
     public function getIdExemplar() {
         return $this->id_exemplar; 
     }

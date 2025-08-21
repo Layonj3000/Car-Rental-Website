@@ -49,7 +49,11 @@
                         <h6 class="veiculo-brand">Marca: <?= $veiculo->getFabricante() ?></h6>
                         <h4 class="veiculo-price">R$ <?= number_format($veiculo->getValor(), '2', ',', '.') ?>/dia</h4>
                         <div class="veiculo-action">
-                            <a href="../../controlers/controlerCarrinho.php?opcao=1&placa=<?= $veiculo->getPlaca() ?>" class="btn-comprar">Reservar</a>
+                            <?php if ($veiculo->isDisponivel()): ?>
+                                <a href="../../controlers/controlerCarrinho.php?opcao=1&placa=<?= $veiculo->getPlaca() ?>" class="btn-comprar">Reservar</a>
+                            <?php else: ?>
+                                <span class="btn-comprar disabled">Indisponível</span>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

@@ -9,19 +9,23 @@ class LocacaoDao{
     function __construct(){
         $c = new Conexao();
         $this -> con = $c -> getConexao();
-    }    
+    }
 
     public function incluirLocacao(Locacao $locacao){
-        $sql = $this -> con -> prepare("insert into locacao (id_locacao, data, valor_total, cpf_socio, id_veiculo)
-                                                     values (:id_locacao, :data, :valor_total, :cpf_socio, :id_veiculo)");
-         
-        $sql -> bindValue(":id_locacao", $locacao -> getIdLocacao());
+        $sql = $this -> con -> prepare("insert into locacao (data, valor_total, cpf_socio, id_veiculo)
+                                                 values (:data, :valor_total, :cpf_socio, :id_veiculo)");
+
         $sql -> bindValue(":data", converteDataMySql($locacao -> getData()));
         $sql -> bindValue(":valor_total", $locacao -> getValorTotal());
         $sql -> bindValue(":cpf_socio", $locacao -> getCpfSocio());
         $sql -> bindValue("id_veiculo", $locacao -> getIdVeiculo());
-        
+
         $sql -> execute();
+
+        $idLocacao = $this->con->lastInsertId();
+        $locacao->setIdLocacao($idLocacao);
+
+        return $idLocacao;
     }
 
     public function atualizarLocacao(Locacao $locacao){

@@ -3,7 +3,6 @@ class Socio {
     private $cpf;
     private $nome;
     private $rg;
-    //private $endereco;
     private $logradouro;
     private $cidade;
     private $estado;
@@ -70,14 +69,6 @@ class Socio {
     public function setRg($rg) {
         $this->rg = $rg;
     }
-
-    /*public function getEndereco() {
-        return $this->endereco;
-    }
-
-    public function setEndereco($endereco) {
-        $this->endereco = $endereco;
-    }*/
 
     public function getLogradouro() {
         return $this->logradouro;

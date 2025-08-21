@@ -120,6 +120,19 @@
     box-shadow: 0 0 0 0.2rem rgba(51, 204, 51, 0.5);
 }
 
+.btn-comprar.disabled {
+    background-color: #6c757d;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.btn-comprar.disabled:hover {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
 @media (max-width: 768px) {
     .vehicles-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

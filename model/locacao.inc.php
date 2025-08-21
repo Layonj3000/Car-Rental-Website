@@ -2,21 +2,24 @@
 class Locacao {
     private $id_locacao;
     private $data;
+    private $dias;
     private $valor_total;
     private $cpf_socio;
     private $id_veiculo;
 
-    public function setLocacaoComId($id_locacao, $data, $valor_total, $cpf_socio, $id_veiculo){
+    public function setLocacaoComId($id_locacao, $data, $valor_total, $dias, $cpf_socio, $id_veiculo){
         $this->id_locacao = $id_locacao;
         $this->data = strtotime($data);
         $this->valor_total = $valor_total;
+        $this->dias = $dias;
         $this->cpf_socio = $cpf_socio;
         $this->id_veiculo = $id_veiculo;
     }
 
-    public function setLocacao($data, $valor_total, $cpf_socio, $id_veiculo){
+    public function setLocacao($data, $valor_total, $dias, $cpf_socio, $id_veiculo){
         $this->data = strtotime($data);
         $this->valor_total = $valor_total;
+        $this->dias = $dias;
         $this->cpf_socio = $cpf_socio;
         $this->id_veiculo = $id_veiculo;
     }
@@ -51,6 +54,14 @@ class Locacao {
 
     public function setCpfSocio($cpf_socio) {
         $this->cpf_socio = $cpf_socio;
+    }
+
+    public function getDias() {
+        return $this->dias;
+    }
+
+    public function setDias($dias) {
+        $this->dias = $dias;
     }
 
     public function getIdVeiculo() {
