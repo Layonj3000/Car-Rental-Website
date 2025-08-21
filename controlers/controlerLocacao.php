@@ -2,6 +2,7 @@
 include_once "../dao/exemplarDao.inc.php";
 include_once "../dao/locacaoDao.inc.php";
 include_once "../dao/socioDAO.inc.php";
+include_once "../dao/veiculoDao.inc.php";
 include_once "../model/socio.inc.php";
 include_once "../utils/funcoesUteis.php";
 session_start();
@@ -61,9 +62,15 @@ if ($op == 5) {
     $carrinho = $_SESSION['carrinho'];
     $socio = $_SESSION['socio'];
     $total = $_SESSION['total'];
+    $veiculoDao = new VeiculoDao();
 
     foreach ($carrinho as $item) {
-        if (!$item->getVeiculo()->isDisponivel()) {
+        $placa = $item->getVeiculo()->getPlaca();
+        
+        $disponibilidadeReal = $veiculoDao->getDisponibilidadeVeiculo($placa);
+
+        if ($disponibilidadeReal == false) { 
+        
             header("Location: ../views/carrinho/dadosCompra.php?erro=veiculo_nao_disponivel");
             exit();
         }
