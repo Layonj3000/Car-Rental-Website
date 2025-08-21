@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2025 at 08:37 PM
+-- Generation Time: Aug 21, 2025 at 01:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,8 +55,19 @@ CREATE TABLE `exemplares` (
   `id_exemplar` int(11) NOT NULL,
   `placa_veiculo` varchar(8) NOT NULL,
   `id_locacao` int(11) NOT NULL,
-  `locado` tinyint(1) NOT NULL
+  `locado` tinyint(1) NOT NULL,
+  `dias` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `exemplares`
+--
+
+INSERT INTO `exemplares` (`id_exemplar`, `placa_veiculo`, `id_locacao`, `locado`, `dias`) VALUES
+(2, 'HSZ5690', 3, 1, 1),
+(3, 'NEN3249', 4, 1, 1),
+(4, 'JYD0621', 5, 1, 1),
+(5, 'HGW4308', 6, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -69,8 +80,18 @@ CREATE TABLE `locacao` (
   `data` date NOT NULL,
   `valor_total` float NOT NULL,
   `cpf_socio` varchar(11) NOT NULL,
-  `id_veiculo` int(11) NOT NULL
+  `id_veiculo` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `locacao`
+--
+
+INSERT INTO `locacao` (`id_locacao`, `data`, `valor_total`, `cpf_socio`, `id_veiculo`) VALUES
+(3, '2025-08-21', 800, '12345678901', 'HSZ5690'),
+(4, '2025-08-21', 3100, '12345678901', 'NEN3249'),
+(5, '2025-08-21', 2200, '12345678901', 'JYD0621'),
+(6, '2025-08-21', 812, '12345678901', 'HGW4308');
 
 -- --------------------------------------------------------
 
@@ -95,7 +116,7 @@ CREATE TABLE `socios` (
 -- Dumping data for table `socios`
 --
 
-INSERT INTO `socios` (`cpf`, `nome`, `rg`, `logradouro`,`cidade`,`estado`,`cep`, `telefone`, `email`, `id_usuario`) VALUES
+INSERT INTO `socios` (`cpf`, `nome`, `rg`, `logradouro`, `cidade`, `estado`, `cep`, `telefone`, `email`, `id_usuario`) VALUES
 ('12345678901', 'Maria Oliveira', 'MG1234567', 'Rua das Flores', 'Alegre', 'Espírito Santo', '29500-000', '31988776655', 'maria@email.com', 1),
 ('98765432100', 'João Silva', 'SP9876543', 'Av. Paulista', 'São Paulo', 'São Paulo', '29561-000', '11977665544', 'joao@email.com', 2);
 
@@ -208,13 +229,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `exemplares`
 --
 ALTER TABLE `exemplares`
-  MODIFY `id_exemplar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_exemplar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `locacao`
 --
 ALTER TABLE `locacao`
-  MODIFY `id_locacao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_locacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
