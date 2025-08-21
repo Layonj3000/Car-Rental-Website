@@ -6,7 +6,7 @@
     } else {
 ?>
         <li class="btn-sair">
-            <button type="button" class="btn-sair-custom" id="abrirModal">Sair</button>
+            <button type="button" class="btn-sair-custom" data-modal-target="#modalSair" id="abrirModal">Sair</button>
         </li>
 <?php
     }

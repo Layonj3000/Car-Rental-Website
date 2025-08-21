@@ -72,21 +72,4 @@ $carrinho = $_SESSION['carrinho'];
     </div>
 </div>
 
-<?php if(isset($_REQUEST['erro']) && $_REQUEST['erro'] == 'veiculo_nao_disponivel'): ?>
-    <div id="meuModal" class="modal-custom mostrar">
-        <div class="modal-dialogo">
-            <div class="modal-cabecalho">
-                <h5 class="modal-titulo">Atenção</h5>
-                <button type="button" class="btn-fechar" id="fecharModalX">&times;</button>
-            </div>
-            <div class="modal-corpo">
-                <p>Um dos veículos selecionados para locação, se encontra indisponível no momento. Você ainda pode selecionar outros modelos em nosso Show Room!</p>
-            </div>
-            <div class="modal-rodape">
-                <a href="../../controlers/controlerVeiculo.php?opcao=7" role="button" class="btn-confirmar">Ir para Show Room</a>
-            </div>
-        </div>
-    </div>
-<?php endif; ?>
-
 <?php require_once "../includes/rodape.inc.php" ?>

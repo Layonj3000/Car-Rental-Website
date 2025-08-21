@@ -79,7 +79,9 @@ require_once '../includes/cabecalho.inc.php';
     }
     ?>
 </div>
-
+<?php 
+    include_once '../includes/modal.inc.php'; 
+?>
 <?php
-require_once '../includes/rodape.inc.php';
+    require_once '../includes/rodape.inc.php';
 ?>

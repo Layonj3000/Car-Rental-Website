@@ -85,8 +85,23 @@ if($opcao == 5){ //finalizar compra
         $total = (float) $_REQUEST['total'];
 
         $_SESSION['total'] = $total;
+        $carrinho = $_SESSION['carrinho'];
+        $veiculoDao = new VeiculoDao();
+
+        foreach ($carrinho as $item) {
+            $placa = $item->getVeiculo()->getPlaca();
+            
+            $disponibilidadeReal = $veiculoDao->getDisponibilidadeVeiculo($placa);
+
+            if ($disponibilidadeReal == false) { 
+            
+                header("Location: ../views/carrinho/exibirCarrinho.php?erro=veiculo_nao_disponivel");
+                exit();
+            }
+        }
 
         header("Location: ../views/carrinho/dadosCompra.php");
+
     }else{
         header("Location: ../views/area-publica/formLogin.php");
     }
