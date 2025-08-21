@@ -9,6 +9,7 @@ class Veiculo {
     private $valorBase;
     private $valor;
     private $fotoReferencia;
+    private $disponivel;
     private $id_categoria;
 
 
@@ -107,6 +108,14 @@ class Veiculo {
     public function setFotoReferencia($fotoReferencia)
     {
         $this->fotoReferencia = $fotoReferencia;
+    }
+
+    public function isDisponivel() {
+        return $this->disponivel;
+    }
+
+    public function setDisponivel($disponivel) {
+        $this->disponivel = $disponivel;
     }
 
     public function getIdCategoria() {

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnFechar = document.getElementById('fecharModalBtn');
 
     if (!modal || !btnAbrir || !btnFecharX || !btnFechar) {
-        console.error("Elementos do modal não encontrados. Verifique os IDs no HTML.");
         return;
     }
 

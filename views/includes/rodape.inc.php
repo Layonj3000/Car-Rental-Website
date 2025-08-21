@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../estilos/estilo-rodape.css">
-</head>
-<body>
-
 <footer>
     <div class="footer-container">
         <div class="footer-left">
@@ -20,5 +11,7 @@
     </div>
 </footer>
 
+<script src="../../scripts/script-modal.js"></script>
+<script src="../../scripts/menu-mobile.js"></script>
 </body>
 </html>

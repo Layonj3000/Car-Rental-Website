@@ -17,4 +17,3 @@
     </ul>
 </nav>
 
-<script src="../../scripts/menu-mobile.js"></script>

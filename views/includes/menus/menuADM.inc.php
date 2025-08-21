@@ -34,5 +34,3 @@
     include_once '../includes/modal.inc.php'; 
 ?>
 
-<script src="../../scripts/script-modal.js"></script>
-<script src="../../scripts/menu-mobile.js"></script>

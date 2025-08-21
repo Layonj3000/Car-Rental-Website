@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../../estilos/estilo-carrinho.css">
     <link rel="stylesheet" href="../../estilos/estilo-dados-compra.css">
     <link rel="stylesheet" href="../../estilos/estilo-modal.css">
+    <link rel="stylesheet" href="../../estilos/estilo-rodape.css">
+
 
 </head>
 <body>
@@ -39,5 +41,3 @@
         }
     ?>    
 
-</body>
-</html>

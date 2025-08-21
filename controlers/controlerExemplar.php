@@ -6,7 +6,7 @@
 
     if($opcao == 1){//incluir
         $exemplar = new Exemplar();
-        $exemplar -> setExemplar($_REQUEST['placaVeiculo'], $_REQUEST['idLocacao'], $_REQUEST['Locado']);
+        $exemplar -> setExemplar($_REQUEST['placaVeiculo'], $_REQUEST['idLocacao'], $_REQUEST['Locado'], $_REQUEST['dias']);
 
         $exemplarDao = new ExemplarDao();
 
@@ -49,7 +49,7 @@
 
         $exemplar = new Exemplar();
 
-        $exemplar -> setExemplarComId($_REQUEST['idExemplar'], $_REQUEST['placaVeiculo'], $_REQUEST['idLocacao'], $_REQUEST['Locado']);
+        $exemplar -> setExemplarComId($_REQUEST['idExemplar'], $_REQUEST['placaVeiculo'], $_REQUEST['idLocacao'], $_REQUEST['Locado'], $_REQUEST['dias']);
 
         if($exemplarDao -> veiculoExists($_REQUEST['placaVeiculo']) == 1 && $exemplarDao -> locacaoExists($_REQUEST['idLocacao']) ==1){
             $exemplarDao -> atualizarExemplar($exemplar);

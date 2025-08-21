@@ -82,12 +82,13 @@
         // }
 
         public function getVeiculos($placa, $nome, $motorizacao, $fabricante){
-            $sql = $this -> con -> prepare("select * 
-                                          from veiculos 
-                                          where (:placa = '' or placa = :placa)
-                                          and (:nome = '' or nome LIKE CONCAT('%', :nome, '%'))
-                                          and (:motorizacao = '' or motorizacao LIKE CONCAT('%', :motorizacao, '%'))
-                                          and (:fabricante = '' or fabricante LIKE CONCAT('%', :fabricante, '%'))");
+            $sql = $this -> con -> prepare("select *
+                                                    from veiculos v
+                                                        left join exemplares e on v.placa = e.placa_veiculo
+                                                    where (:placa = '' or placa = :placa)
+                                                      and (:nome = '' or nome LIKE CONCAT('%', :nome, '%'))
+                                                      and (:motorizacao = '' or motorizacao LIKE CONCAT('%', :motorizacao, '%'))
+                                                      and (:fabricante = '' or fabricante LIKE CONCAT('%', :fabricante, '%'))");
 
             $sql -> bindValue(":nome", $nome);
             $sql -> bindValue(":placa", $placa);
@@ -113,35 +114,7 @@
                 $veiculo -> setValor($rs -> valorBase + $valorCategoria);
                 $veiculo -> setIdCategoria($rs -> id_categoria);
                 $veiculo -> setFotoReferencia($rs -> fotoReferencia);
-
-                $veiculos[] = $veiculo;
-            }
-
-            return $veiculos;
-        }
-
-        public function getVeiculosComImagem(){
-            $sql = $this -> con -> prepare("select * from veiculos");
-
-            $sql->execute();
-
-            $veiculos = array();
-
-            while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
-                $categoriaDao = new CategoriaDao();
-                $valorCategoria = $categoriaDao->getValorCategoria($rs -> id_categoria);
-
-                $veiculo = new Veiculo();
-                $veiculo -> setPlaca($rs -> placa);
-                $veiculo -> setNome($rs -> nome);
-                $veiculo -> setAnoFabricacao($rs -> anoFabricacao);
-                $veiculo -> setFabricante($rs -> fabricante);
-                $veiculo -> setOpcionais($rs -> opcionais);
-                $veiculo -> setMotorizacao($rs -> motorizacao);
-                $veiculo -> setValorBase($rs -> valorBase);
-                $veiculo -> setValor($rs -> valorBase + $valorCategoria);
-                $veiculo -> setFotoReferencia($rs -> fotoReferencia);
-                $veiculo -> setIdCategoria($rs -> id_categoria);
+                $veiculo -> setDisponivel(!$rs -> locado);
 
                 $veiculos[] = $veiculo;
             }
@@ -176,6 +149,19 @@
             $veiculo->setFotoReferencia($rs -> fotoReferencia);
 
             return $veiculo;
+        }
+
+        public function getDisponibilidadeVeiculo($placa){
+            $sql = $this->con->prepare("SELECT e.locado as locado FROM veiculos v LEFT JOIN exemplares e on e.placa_veiculo = v.placa WHERE placa = :placa");
+            $sql->bindValue(":placa", $placa);
+            $sql->execute();
+
+            $rs = $sql->fetch(PDO::FETCH_OBJ);
+
+            if ($rs === false) {
+                return null;
+            }
+            return !$rs -> locado;
         }
 
         /*public function getVeiculosByNome($nome){

@@ -21,7 +21,12 @@
         <label for="idLocacao">ID Locacao:</label>
         <input type="text" name="idLocacao" value=<?=$exemplar -> getIdLocacao()?> required>
     </div>
-    
+
+    <div class="padrao">
+        <label for="dias">Dias:</label>
+        <input type="number" step="1" name="dias" value="1" required>
+    </div>
+
     <div class="locado">
         <label for="Locado">Locado:</label>
         <select name="Locado">
