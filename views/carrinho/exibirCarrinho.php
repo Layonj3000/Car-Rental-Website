@@ -3,7 +3,6 @@ require_once '../../model/veiculo.inc.php';
 require_once '../../model/exemplar.inc.php';
 require_once '../includes/cabecalho.inc.php';
 ?>
-<link rel="stylesheet" href="estilos-carrinho.css">
 
 <div class="carrinho-container">
     <h1 class="titulo-carrinho">Carrinho de compra</h1>

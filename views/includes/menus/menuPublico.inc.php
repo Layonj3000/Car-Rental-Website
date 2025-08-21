@@ -16,3 +16,5 @@
         <?php include 'botoes/botaoLogin.inc.php'; ?>
     </ul>
 </nav>
+
+<script src="../../scripts/menu-mobile.js"></script>
