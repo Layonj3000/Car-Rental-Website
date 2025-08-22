@@ -80,7 +80,7 @@ class LocacaoDao{
         while($rs = $sql -> fetch(PDO::FETCH_OBJ)){
             $locacao = new Locacao();
 
-            $locacao -> setLocacaoComId($rs -> id_locacao, $rs -> data, $rs -> valor_total, $rs -> cpf_socio, $rs -> id_veiculo);
+            $locacao -> setLocacaoComId($rs -> id_locacao, $rs -> data, $rs -> valor_total, $rs->dias, $rs -> cpf_socio, $rs -> id_veiculo);
 
             $locacoes[] = $locacao;
         }
@@ -119,7 +119,7 @@ class LocacaoDao{
         
         while($rs = $stmt->fetch(PDO::FETCH_OBJ)){
             $locacao = new Locacao();
-            $locacao->setLocacaoComId($rs->id_locacao, $rs->data, $rs->valor_total, $rs->cpf_socio, $rs->id_veiculo);
+            $locacao->setLocacaoComId($rs->id_locacao, $rs->data, $rs->valor_total, $rs->dias, $rs->cpf_socio, $rs->id_veiculo);
             $locacoes[] = $locacao;
         }
 
