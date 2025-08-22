@@ -82,6 +82,7 @@ class ExemplarDao{
             $exemplar -> setPlacaVeiculo($rs -> placa_veiculo);
             $exemplar -> setIdLocacao($rs -> id_locacao);
             $exemplar -> setLocado($rs -> locado);
+            $exemplar->setDias($rs->dias);     
         }
 
         return $exemplar;

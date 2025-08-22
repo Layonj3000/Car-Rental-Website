@@ -63,16 +63,16 @@ class Exemplar {
         return $this->locado;
     }
 
-    public function setLocado() {
-        $this->locado = 1;
+    public function setLocado($status) {
+        $this->locado = $status;
     }
 
     public function getDias() {
         return $this->dias;
     }
 
-    public function setDias() {
-        $this->dias++;
+    public function setDias($numeroDeDias) {
+        $this->dias = $numeroDeDias;
     }
 
     public function getVeiculo() {
