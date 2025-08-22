@@ -27,13 +27,15 @@ class ExemplarDao{
     public function atualizarExemplar(Exemplar $exemplar){
         $sql = $this -> con -> prepare("update exemplares set placa_veiculo = :placa_veiculo, 
                                                               id_locacao = :id_locacao, 
-                                                              locado = :locado
+                                                              locado = :locado,
+                                                              dias = :dias
                                                               where id_exemplar = :id_exemplar");
                                                               
         $sql -> bindValue(":id_exemplar", $exemplar -> getIdExemplar());
         $sql -> bindValue(":placa_veiculo", $exemplar -> getPlacaVeiculo());
         $sql -> bindValue(":id_locacao", $exemplar -> getIdLocacao());
         $sql -> bindValue(":locado", $exemplar -> getLocado());
+        $sql -> bindValue(":dias", $exemplar -> getDias());
 
         $sql -> execute();
     }
