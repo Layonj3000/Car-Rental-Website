@@ -52,6 +52,8 @@
         <label for="idCategoria">Id Categoria:</label>
         <input type="text" name="idCategoria" readonly value=<?= $veiculo -> getIdCategoria()?> required>
     </div>
+    
+    <input type="hidden" name="fotoReferencia" value="<?= $veiculo->getFotoReferencia() ?>">
 
     <input type="hidden" name="opcao" value="4">
 
