@@ -43,6 +43,7 @@
                                                                 opcionais = :opcionais,
                                                                 motorizacao = :motorizacao,
                                                                 valorBase = :valorBase,
+                                                                fotoReferencia = :fotoReferencia,
                                                                 id_categoria = :id_categoria
                                             where placa = :placa");
 

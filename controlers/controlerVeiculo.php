@@ -54,7 +54,7 @@
 
         $veiculo = new Veiculo();
 
-        $veiculo -> setVeiculoComPlaca($_REQUEST['placa'], $_REQUEST['nomeVeiculo'], $_REQUEST['anoFabricacao'], $_REQUEST['fabricante'], $_REQUEST['opcionais'], $_REQUEST['motorizacao'], $_REQUEST['valorBase'], $_REQUEST['idCategoria']);
+        $veiculo -> setVeiculoComPlaca($_REQUEST['placa'], $_REQUEST['nomeVeiculo'], $_REQUEST['anoFabricacao'], $_REQUEST['fabricante'], $_REQUEST['opcionais'], $_REQUEST['motorizacao'], $_REQUEST['valorBase'],$_REQUEST['fotoReferencia'], $_REQUEST['idCategoria']);
     
         $veiculoDao -> atualizarVeiculo($veiculo);
 
