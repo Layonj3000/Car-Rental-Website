@@ -20,6 +20,16 @@ This project was built using the following technologies:
 * **JavaScript:** For interactivity, DOM manipulation, and dynamic functionalities.
 * **PHP:** For server-side scripting, processing forms, and managing dynamic content.
 
-
+## 👨‍💻 Authors
+<div>
+  <table style="margin: 0 auto;">
+    <tr>
+      <td><a href="https://github.com/DavidPotentini"><img loading="lazy" src="https://avatars.githubusercontent.com/u/106561154?v=4" width="115"><br><sub>David Potentini</sub></a></td>
+      <td><a href="https://github.com/guilhermediniz1"><img loading="lazy" src="https://avatars.githubusercontent.com/u/50873941?v=4" width="115"><br><sub>Guilherme Diniz</sub></a></td>
+      <td><a href="https://github.com/kevindepolli"><img loading="lazy" src="https://avatars.githubusercontent.com/u/95195647?v=4" width="115"><br><sub>Kevin Depolli</sub></a></td>
+      <td><a href="https://github.com/Layonj300"><img loading="lazy" src="https://avatars.githubusercontent.com/u/106559843?v=4" width="115"><br><sub>Layon Reis</sub></a></td>
+    </tr>
+  </table>
+</div>
 
 
